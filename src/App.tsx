@@ -1,11 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import Student from './pages/student/student.page';
+import {Route,Routes} from 'react-router-dom'
+import StudentCollection from './component/studentcollection/studentcollection.component';
+import StudentDetails from './component/studentdetails/studentdetails.component';
 function App() {
   return (
     <div className="App">
-      HEllo
+      <Routes>
+        <Route path="student/" >
+          <Route path="list" element={<StudentCollection/>} />
+          <Route path=":id" element={<StudentDetails/>} />
+        </Route>
+      </Routes>
     </div>
   );
 }
