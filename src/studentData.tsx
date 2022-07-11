@@ -1,628 +1,418 @@
 const STUDENT_DATA = [
-    {
-      "id": "62cace7b014d4750bd7ac021",
-      "name": "Lauri Wilkins",
-      "personal": {
-        "phone": 9061526880,
-        "age": 9,
-        "group": "B",
-        "gender": "Male",
-        "father": "Eleanor Owens",
-        "mother": "Stephenson Shields",
-        "address": "Lindisfarne, Benin",
-        "dob": {
-          "year": 2015,
-          "month": 4,
-          "day": 28
-        }
-      },
-      "account": {
-        "speechTherapy": 4000,
-        "therapy": 4000,
-        "transportation": 0,
-        "admissionCharge": 8000,
-        "monthlyCharge": 8000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7bb6e6074b311e5cd5",
-      "name": "Melody Montgomery",
-      "personal": {
-        "phone": 9594842574,
-        "age": 7,
-        "group": "D",
-        "gender": "Male",
-        "father": "Bertha Sharp",
-        "mother": "Freda Foster",
-        "address": "Brady, Nicaragua",
-        "dob": {
-          "year": 2007,
-          "month": 9,
-          "day": 16
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 4000,
-        "transportation": 0,
-        "admissionCharge": 8000,
-        "monthlyCharge": 9000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7baae4efa298e75e37",
-      "name": "Corina Johnson",
-      "personal": {
-        "phone": 9861922259,
-        "age": 5,
-        "group": "D",
-        "gender": "Male",
-        "father": "Bray Dean",
-        "mother": "Judith Douglas",
-        "address": "Condon, Zaire",
-        "dob": {
-          "year": 2007,
-          "month": 3,
-          "day": 6
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 4000,
-        "transportation": 0,
-        "admissionCharge": 8000,
-        "monthlyCharge": 9000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7b67dfe4eea80ed3ef",
-      "name": "Ford Richards",
-      "personal": {
-        "phone": 9509039481,
-        "age": 10,
-        "group": "C",
-        "gender": "Female",
-        "father": "Lee Cardenas",
-        "mother": "Deirdre Mercer",
-        "address": "Hoagland, Cocos (Keeling Islands)",
-        "dob": {
-          "year": 2010,
-          "month": 5,
-          "day": 6
-        }
-      },
-      "account": {
-        "speechTherapy": 4000,
-        "therapy": 4000,
-        "transportation": 0,
-        "admissionCharge": 8000,
-        "monthlyCharge": 9000,
-        "snacks": 450
-      }
-    },
-    {
-      "id": "62cace7b3c1bc62a99f554dc",
-      "name": "Acevedo Morton",
-      "personal": {
-        "phone": 9610302494,
-        "age": 5,
-        "group": "A",
-        "gender": "Female",
-        "father": "Nash Moreno",
-        "mother": "Sutton Ruiz",
-        "address": "Blodgett, Liberia",
-        "dob": {
-          "year": 2011,
-          "month": 2,
-          "day": 30
-        }
-      },
-      "account": {
-        "speechTherapy": 4000,
-        "therapy": 0,
-        "transportation": 0,
-        "admissionCharge": 8000,
-        "monthlyCharge": 8000,
-        "snacks": 450
-      }
-    },
-    {
-      "id": "62cace7b9dd1ad3a82c1165d",
-      "name": "Ewing Moses",
-      "personal": {
-        "phone": 9681401470,
-        "age": 10,
-        "group": "B",
-        "gender": "Male",
-        "father": "Elba Grimes",
-        "mother": "Roxie Cross",
-        "address": "Edneyville, China",
-        "dob": {
-          "year": 2013,
-          "month": 4,
-          "day": 16
-        }
-      },
-      "account": {
-        "speechTherapy": 4000,
-        "therapy": 4000,
-        "transportation": 0,
-        "admissionCharge": 8000,
-        "monthlyCharge": 8000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7bddff6e9adc194dcd",
-      "name": "Hill Olsen",
-      "personal": {
-        "phone": 9106508753,
-        "age": 4,
-        "group": "C",
-        "gender": "Female",
-        "father": "Juliette Dale",
-        "mother": "Mcfarland Drake",
-        "address": "Layhill, Guam",
-        "dob": {
-          "year": 2007,
-          "month": 11,
-          "day": 5
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 0,
-        "transportation": 0,
-        "admissionCharge": 8000,
-        "monthlyCharge": 9000,
-        "snacks": 450
-      }
-    },
-    {
-      "id": "62cace7b81739cff06b5d57d",
-      "name": "Sally Rasmussen",
-      "personal": {
-        "phone": 9118968078,
-        "age": 9,
-        "group": "C",
-        "gender": "Male",
-        "father": "Selena Bolton",
-        "mother": "Bette Morales",
-        "address": "Denio, New Caledonia",
-        "dob": {
-          "year": 2017,
-          "month": 2,
-          "day": 1
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 4000,
-        "transportation": 800,
-        "admissionCharge": 8000,
-        "monthlyCharge": 9000,
-        "snacks": 450
-      }
-    },
-    {
-      "id": "62cace7b01fcdee130ebed69",
-      "name": "Cathy Boone",
-      "personal": {
-        "phone": 9900525653,
-        "age": 7,
-        "group": "A",
-        "gender": "Male",
-        "father": "Skinner Snyder",
-        "mother": "Thornton Bender",
-        "address": "Waukeenah, India",
-        "dob": {
-          "year": 2012,
-          "month": 2,
-          "day": 27
-        }
-      },
-      "account": {
-        "speechTherapy": 4000,
-        "therapy": 4000,
-        "transportation": 800,
-        "admissionCharge": 8000,
-        "monthlyCharge": 9000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7bb53d7ee30321ab1f",
-      "name": "Grant Solis",
-      "personal": {
-        "phone": 9271016758,
-        "age": 3,
-        "group": "A",
-        "gender": "Female",
-        "father": "Josie Thornton",
-        "mother": "Lillian Vargas",
-        "address": "Topaz, Mauritania",
-        "dob": {
-          "year": 2006,
-          "month": 6,
-          "day": 11
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 4000,
-        "transportation": 800,
-        "admissionCharge": 10000,
-        "monthlyCharge": 9000,
-        "snacks": 450
-      }
-    },
-    {
-      "id": "62cace7be14d3d69c676a38b",
-      "name": "Claudia Padilla",
-      "personal": {
-        "phone": 9105927855,
-        "age": 4,
-        "group": "C",
-        "gender": "Male",
-        "father": "Laurie Frye",
-        "mother": "Berger Webb",
-        "address": "Wyoming, Indonesia",
-        "dob": {
-          "year": 2006,
-          "month": 9,
-          "day": 3
-        }
-      },
-      "account": {
-        "speechTherapy": 4000,
-        "therapy": 4000,
-        "transportation": 800,
-        "admissionCharge": 8000,
-        "monthlyCharge": 9000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7b0cecae68bb804ae3",
-      "name": "Abigail Peters",
-      "personal": {
-        "phone": 9716751022,
-        "age": 8,
-        "group": "A",
-        "gender": "Female",
-        "father": "Marcie Watson",
-        "mother": "Dillon Pearson",
-        "address": "Hollins, British Indian Ocean Territory",
-        "dob": {
-          "year": 2012,
-          "month": 6,
-          "day": 25
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 4000,
-        "transportation": 800,
-        "admissionCharge": 8000,
-        "monthlyCharge": 9000,
-        "snacks": 450
-      }
-    },
-    {
-      "id": "62cace7b7d85064eb5e2f2cc",
-      "name": "Alvarado Barnett",
-      "personal": {
-        "phone": 9293015741,
-        "age": 4,
-        "group": "C",
-        "gender": "Female",
-        "father": "Rodriguez Howard",
-        "mother": "Lilian Barlow",
-        "address": "Dawn, Israel",
-        "dob": {
-          "year": 2015,
-          "month": 1,
-          "day": 17
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 0,
-        "transportation": 800,
-        "admissionCharge": 10000,
-        "monthlyCharge": 9000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7b0e05e325a2feabe6",
-      "name": "Rojas Potter",
-      "personal": {
-        "phone": 9099580573,
-        "age": 8,
-        "group": "D",
-        "gender": "Female",
-        "father": "Bethany Velasquez",
-        "mother": "Shannon Vinson",
-        "address": "Otranto, Peru",
-        "dob": {
-          "year": 2009,
-          "month": 5,
-          "day": 7
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 0,
-        "transportation": 800,
-        "admissionCharge": 8000,
-        "monthlyCharge": 8000,
-        "snacks": 450
-      }
-    },
-    {
-      "id": "62cace7bee684c406dcc2317",
-      "name": "Bradley Wynn",
-      "personal": {
-        "phone": 9063855531,
-        "age": 10,
-        "group": "B",
-        "gender": "Female",
-        "father": "Heather Dillon",
-        "mother": "Mabel Vasquez",
-        "address": "Cascades, Gibraltar",
-        "dob": {
-          "year": 2014,
-          "month": 6,
-          "day": 1
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 0,
-        "transportation": 800,
-        "admissionCharge": 8000,
-        "monthlyCharge": 8000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7bb84d9401fc0afbb8",
-      "name": "Beatrice Bishop",
-      "personal": {
-        "phone": 9063364335,
-        "age": 5,
-        "group": "D",
-        "gender": "Male",
-        "father": "Jeanne Juarez",
-        "mother": "Randi Berg",
-        "address": "Shawmut, Papua New Guinea",
-        "dob": {
-          "year": 2016,
-          "month": 1,
-          "day": 11
-        }
-      },
-      "account": {
-        "speechTherapy": 4000,
-        "therapy": 4000,
-        "transportation": 0,
-        "admissionCharge": 10000,
-        "monthlyCharge": 8000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7bad9909ae78fd8cd5",
-      "name": "Beck Ellison",
-      "personal": {
-        "phone": 9822217072,
-        "age": 10,
-        "group": "C",
-        "gender": "Female",
-        "father": "Thompson Battle",
-        "mother": "Shawna Larson",
-        "address": "Roberts, Mali",
-        "dob": {
-          "year": 2010,
-          "month": 8,
-          "day": 14
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 4000,
-        "transportation": 0,
-        "admissionCharge": 10000,
-        "monthlyCharge": 8000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7b734f0de9c39a5f08",
-      "name": "Rhea Cohen",
-      "personal": {
-        "phone": 9419839079,
-        "age": 4,
-        "group": "D",
-        "gender": "Male",
-        "father": "Liza Schultz",
-        "mother": "Connie Saunders",
-        "address": "Lloyd, East Timor",
-        "dob": {
-          "year": 2010,
-          "month": 3,
-          "day": 21
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 0,
-        "transportation": 0,
-        "admissionCharge": 8000,
-        "monthlyCharge": 9000,
-        "snacks": 450
-      }
-    },
-    {
-      "id": "62cace7b30a888f8d07eda76",
-      "name": "Carmen David",
-      "personal": {
-        "phone": 9698648179,
-        "age": 7,
-        "group": "A",
-        "gender": "Male",
-        "father": "Victoria Parks",
-        "mother": "Priscilla Cleveland",
-        "address": "Forestburg, Guatemala",
-        "dob": {
-          "year": 2008,
-          "month": 11,
-          "day": 5
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 4000,
-        "transportation": 0,
-        "admissionCharge": 10000,
-        "monthlyCharge": 8000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7bbacead8fa2f36d56",
-      "name": "Sims Rhodes",
-      "personal": {
-        "phone": 9905312736,
-        "age": 3,
-        "group": "D",
-        "gender": "Female",
-        "father": "Esmeralda Martin",
-        "mother": "Cruz Schneider",
-        "address": "Yettem, Marshall Islands",
-        "dob": {
-          "year": 2014,
-          "month": 2,
-          "day": 19
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 0,
-        "transportation": 800,
-        "admissionCharge": 10000,
-        "monthlyCharge": 9000,
-        "snacks": 450
-      }
-    },
-    {
-      "id": "62cace7bfb535b3cfb1efed1",
-      "name": "Gilbert Barrera",
-      "personal": {
-        "phone": 9305694328,
-        "age": 10,
-        "group": "B",
-        "gender": "Male",
-        "father": "Mckinney Hebert",
-        "mother": "Terrell Leon",
-        "address": "Allamuchy, Swaziland",
-        "dob": {
-          "year": 2009,
-          "month": 11,
-          "day": 12
-        }
-      },
-      "account": {
-        "speechTherapy": 4000,
-        "therapy": 4000,
-        "transportation": 0,
-        "admissionCharge": 8000,
-        "monthlyCharge": 9000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7b349137356246a178",
-      "name": "Rosetta Booker",
-      "personal": {
-        "phone": 9599613806,
-        "age": 6,
-        "group": "C",
-        "gender": "Female",
-        "father": "Phoebe Rosa",
-        "mother": "Socorro Lawrence",
-        "address": "Brazos, Burundi",
-        "dob": {
-          "year": 2022,
-          "month": 7,
-          "day": 15
-        }
-      },
-      "account": {
-        "speechTherapy": 4000,
-        "therapy": 0,
-        "transportation": 0,
-        "admissionCharge": 10000,
-        "monthlyCharge": 8000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7b887e0cfc0d7954eb",
-      "name": "Dickerson Nichols",
-      "personal": {
-        "phone": 9247835566,
-        "age": 4,
-        "group": "C",
-        "gender": "Female",
-        "father": "Malinda Decker",
-        "mother": "Rivers Cochran",
-        "address": "Lewis, Mexico",
-        "dob": {
-          "year": 2020,
-          "month": 7,
-          "day": 22
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 4000,
-        "transportation": 0,
-        "admissionCharge": 10000,
-        "monthlyCharge": 9000,
-        "snacks": 0
-      }
-    },
-    {
-      "id": "62cace7bde9bee32b7384b11",
-      "name": "Parker Sanford",
-      "personal": {
-        "phone": 9539159373,
-        "age": 3,
-        "group": "A",
-        "gender": "Male",
-        "father": "Tyler Medina",
-        "mother": "Renee Orr",
-        "address": "Fivepointville, Solomon Islands",
-        "dob": {
-          "year": 2021,
-          "month": 1,
-          "day": 8
-        }
-      },
-      "account": {
-        "speechTherapy": 0,
-        "therapy": 0,
-        "transportation": 800,
-        "admissionCharge": 10000,
-        "monthlyCharge": 9000,
-        "snacks": 450
-      }
-    }
-  ]
+  {
+    "id": "62cbbee0affe7ed04295cd0c",
+    "name": "Bernadette Horne",
+    "phone": 9727417935,
+    "age": 8,
+    "group": "A",
+    "gender": "Male",
+    "father": "Goff Garner",
+    "mother": "Mclaughlin Barrera",
+    "address": "Bellamy, Cayman Islands",
+    "dob": "2006/11/18",
+    "speechTherapy": 0,
+    "therapy": 0,
+    "transportation": 800,
+    "admissionCharge": 8000,
+    "monthlyCharge": 9000,
+    "snacks": 0
+  },
+  {
+    "id": "62cbbee04e74be10be87ce7d",
+    "name": "Kaitlin Blake",
+    "phone": 9654684076,
+    "age": 5,
+    "group": "A",
+    "gender": "Male",
+    "father": "Edwards Parker",
+    "mother": "Wong Wilson",
+    "address": "Holcombe, Central African Republic",
+    "dob": "2010/5/27",
+    "speechTherapy": 4000,
+    "therapy": 4000,
+    "transportation": 800,
+    "admissionCharge": 8000,
+    "monthlyCharge": 8000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee0e1630e5ce5679a98",
+    "name": "Stein Richard",
+    "phone": 9268210424,
+    "age": 6,
+    "group": "A",
+    "gender": "Male",
+    "father": "Webster Bennett",
+    "mother": "Allyson Murray",
+    "address": "Benson, Mauritius",
+    "dob": "2017/9/23",
+    "speechTherapy": 4000,
+    "therapy": 0,
+    "transportation": 800,
+    "admissionCharge": 10000,
+    "monthlyCharge": 9000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee0b45b6c2869497ac2",
+    "name": "Pacheco Ratliff",
+    "phone": 9842356768,
+    "age": 9,
+    "group": "B",
+    "gender": "Male",
+    "father": "Head Ochoa",
+    "mother": "Evelyn Evans",
+    "address": "Ahwahnee, Suriname",
+    "dob": "2010/10/27",
+    "speechTherapy": 0,
+    "therapy": 0,
+    "transportation": 800,
+    "admissionCharge": 8000,
+    "monthlyCharge": 9000,
+    "snacks": 0
+  },
+  {
+    "id": "62cbbee09f8012ed9e17e443",
+    "name": "Earnestine Guerra",
+    "phone": 9328702132,
+    "age": 10,
+    "group": "B",
+    "gender": "Male",
+    "father": "Lavonne Galloway",
+    "mother": "Mayer Hess",
+    "address": "Wheatfields, Greece",
+    "dob": "2016/1/15",
+    "speechTherapy": 0,
+    "therapy": 4000,
+    "transportation": 800,
+    "admissionCharge": 8000,
+    "monthlyCharge": 9000,
+    "snacks": 0
+  },
+  {
+    "id": "62cbbee0e9ba236954ff7409",
+    "name": "Corinne Gill",
+    "phone": 9584867964,
+    "age": 4,
+    "group": "D",
+    "gender": "Female",
+    "father": "Tia Byers",
+    "mother": "Booker Le",
+    "address": "Cassel, Austria",
+    "dob": "2012/2/22",
+    "speechTherapy": 4000,
+    "therapy": 4000,
+    "transportation": 800,
+    "admissionCharge": 10000,
+    "monthlyCharge": 8000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee09a141543fed0d66f",
+    "name": "Miranda Washington",
+    "phone": 9861439402,
+    "age": 9,
+    "group": "C",
+    "gender": "Male",
+    "father": "Wendy Lee",
+    "mother": "Hester Boyer",
+    "address": "Wolcott, Lithuania",
+    "dob": "2015/7/3",
+    "speechTherapy": 0,
+    "therapy": 0,
+    "transportation": 800,
+    "admissionCharge": 10000,
+    "monthlyCharge": 9000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee00e5700078315e045",
+    "name": "Wooten Cote",
+    "phone": 9198971219,
+    "age": 7,
+    "group": "C",
+    "gender": "Male",
+    "father": "Brenda Mckay",
+    "mother": "Foley Anderson",
+    "address": "Kirk, Japan",
+    "dob": "2009/10/30",
+    "speechTherapy": 0,
+    "therapy": 0,
+    "transportation": 0,
+    "admissionCharge": 10000,
+    "monthlyCharge": 9000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee078a1c0b93309f516",
+    "name": "Karyn Tillman",
+    "phone": 9968045500,
+    "age": 7,
+    "group": "A",
+    "gender": "Female",
+    "father": "Terry Reid",
+    "mother": "Holly Allison",
+    "address": "Lydia, Palau",
+    "dob": "2010/4/28",
+    "speechTherapy": 4000,
+    "therapy": 0,
+    "transportation": 0,
+    "admissionCharge": 8000,
+    "monthlyCharge": 9000,
+    "snacks": 0
+  },
+  {
+    "id": "62cbbee0bbf5a88f2e9905b1",
+    "name": "Amparo Roth",
+    "phone": 9685625752,
+    "age": 10,
+    "group": "A",
+    "gender": "Male",
+    "father": "Horne Bowman",
+    "mother": "Summers Whitehead",
+    "address": "Osmond, Malta",
+    "dob": "2011/1/25",
+    "speechTherapy": 0,
+    "therapy": 0,
+    "transportation": 800,
+    "admissionCharge": 10000,
+    "monthlyCharge": 8000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee09c0535c49d20e84e",
+    "name": "Oconnor Hubbard",
+    "phone": 9811802272,
+    "age": 10,
+    "group": "B",
+    "gender": "Female",
+    "father": "Austin Acevedo",
+    "mother": "Rochelle Frank",
+    "address": "Shindler, Montserrat",
+    "dob": "2006/4/10",
+    "speechTherapy": 0,
+    "therapy": 4000,
+    "transportation": 800,
+    "admissionCharge": 8000,
+    "monthlyCharge": 9000,
+    "snacks": 0
+  },
+  {
+    "id": "62cbbee04e1da8a0c3cc7927",
+    "name": "Patsy Lindsey",
+    "phone": 9814781870,
+    "age": 6,
+    "group": "B",
+    "gender": "Male",
+    "father": "Santana Peters",
+    "mother": "Adams Phelps",
+    "address": "Wilsonia, Dominica",
+    "dob": "2015/7/30",
+    "speechTherapy": 0,
+    "therapy": 4000,
+    "transportation": 800,
+    "admissionCharge": 8000,
+    "monthlyCharge": 8000,
+    "snacks": 0
+  },
+  {
+    "id": "62cbbee035fe3f2a5ba6e630",
+    "name": "Mccarty Patton",
+    "phone": 9139561674,
+    "age": 6,
+    "group": "D",
+    "gender": "Female",
+    "father": "Schwartz Durham",
+    "mother": "Angeline Hayes",
+    "address": "Beyerville, Eritrea",
+    "dob": "2015/4/25",
+    "speechTherapy": 0,
+    "therapy": 4000,
+    "transportation": 0,
+    "admissionCharge": 10000,
+    "monthlyCharge": 9000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee008d7582baafa98ef",
+    "name": "Sadie Wilcox",
+    "phone": 9873120180,
+    "age": 10,
+    "group": "B",
+    "gender": "Female",
+    "father": "Mccullough Alston",
+    "mother": "Ortega Mendez",
+    "address": "Evergreen, Togo",
+    "dob": "2008/5/14",
+    "speechTherapy": 0,
+    "therapy": 0,
+    "transportation": 0,
+    "admissionCharge": 8000,
+    "monthlyCharge": 8000,
+    "snacks": 0
+  },
+  {
+    "id": "62cbbee0939c7a9de49587d2",
+    "name": "Boone Wyatt",
+    "phone": 9086947193,
+    "age": 9,
+    "group": "B",
+    "gender": "Male",
+    "father": "Church Justice",
+    "mother": "Gregory Luna",
+    "address": "Yogaville, Russian Federation",
+    "dob": "2013/8/8",
+    "speechTherapy": 0,
+    "therapy": 0,
+    "transportation": 800,
+    "admissionCharge": 10000,
+    "monthlyCharge": 8000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee02f719ff11ce50063",
+    "name": "Hess Church",
+    "phone": 9927681414,
+    "age": 3,
+    "group": "D",
+    "gender": "Male",
+    "father": "Jenifer Downs",
+    "mother": "Valeria Becker",
+    "address": "Tetherow, Taiwan",
+    "dob": "2018/2/13",
+    "speechTherapy": 4000,
+    "therapy": 0,
+    "transportation": 800,
+    "admissionCharge": 10000,
+    "monthlyCharge": 8000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee0b6b15a97cf2ac76f",
+    "name": "Lynn Nieves",
+    "phone": 9153769293,
+    "age": 3,
+    "group": "D",
+    "gender": "Female",
+    "father": "Jillian Macdonald",
+    "mother": "Rebecca Koch",
+    "address": "Winesburg, Ghana",
+    "dob": "2013/12/22",
+    "speechTherapy": 0,
+    "therapy": 4000,
+    "transportation": 800,
+    "admissionCharge": 10000,
+    "monthlyCharge": 9000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee0ece7e12d2ea493e0",
+    "name": "Vance Mcintyre",
+    "phone": 9147688955,
+    "age": 6,
+    "group": "D",
+    "gender": "Male",
+    "father": "Ellen Dennis",
+    "mother": "Estelle Barron",
+    "address": "Joes, Singapore",
+    "dob": "2010/2/22",
+    "speechTherapy": 0,
+    "therapy": 4000,
+    "transportation": 0,
+    "admissionCharge": 8000,
+    "monthlyCharge": 9000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee0136f0d762cd6e689",
+    "name": "Jacquelyn Dillard",
+    "phone": 9119681284,
+    "age": 9,
+    "group": "A",
+    "gender": "Female",
+    "father": "Dona Shepard",
+    "mother": "Deanna Mcgowan",
+    "address": "Bowie, Mexico",
+    "dob": "2005/7/16",
+    "speechTherapy": 4000,
+    "therapy": 0,
+    "transportation": 800,
+    "admissionCharge": 8000,
+    "monthlyCharge": 9000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee09a42a828e9de31f3",
+    "name": "Jewell Drake",
+    "phone": 9007443344,
+    "age": 10,
+    "group": "B",
+    "gender": "Male",
+    "father": "Ana Perry",
+    "mother": "Byers Rush",
+    "address": "Moquino, S. Georgia and S. Sandwich Isls.",
+    "dob": "2012/9/18",
+    "speechTherapy": 4000,
+    "therapy": 4000,
+    "transportation": 800,
+    "admissionCharge": 10000,
+    "monthlyCharge": 8000,
+    "snacks": 0
+  },
+  {
+    "id": "62cbbee04510b0a16152ead3",
+    "name": "Liz Clarke",
+    "phone": 9988741644,
+    "age": 9,
+    "group": "D",
+    "gender": "Female",
+    "father": "Antonia Delacruz",
+    "mother": "Pearl Strong",
+    "address": "Bridgetown, Netherlands Antilles",
+    "dob": "2014/5/29",
+    "speechTherapy": 4000,
+    "therapy": 0,
+    "transportation": 800,
+    "admissionCharge": 10000,
+    "monthlyCharge": 8000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee074fe04a4f6922b65",
+    "name": "Craig Brooks",
+    "phone": 9356438308,
+    "age": 3,
+    "group": "D",
+    "gender": "Male",
+    "father": "Louisa Rosales",
+    "mother": "Melanie Barry",
+    "address": "Kenvil, Virgin Islands (US)",
+    "dob": "2011/10/4",
+    "speechTherapy": 4000,
+    "therapy": 0,
+    "transportation": 0,
+    "admissionCharge": 10000,
+    "monthlyCharge": 8000,
+    "snacks": 450
+  },
+  {
+    "id": "62cbbee032af8f31f844314f",
+    "name": "Tommie Arnold",
+    "phone": 9833629077,
+    "age": 7,
+    "group": "C",
+    "gender": "Female",
+    "father": "Dolly Hull",
+    "mother": "Hicks Stewart",
+    "address": "Mapletown, Grenada",
+    "dob": "2014/10/10",
+    "speechTherapy": 4000,
+    "therapy": 0,
+    "transportation": 800,
+    "admissionCharge": 8000,
+    "monthlyCharge": 8000,
+    "snacks": 0
+  }
+]
 
 export default STUDENT_DATA
