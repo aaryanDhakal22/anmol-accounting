@@ -4,10 +4,10 @@ import {  StudentProfile } from "../../gtypes";
 import './studenttile.styles.css'
 
 const StudentTile =(profile: {profile:StudentProfile})=>{
-    const {name,group,age,phone,address,id} = profile.profile
+    const {name,group,age,phone,address,unid} = profile.profile
     const navigate = useNavigate()
     const handleNavigate = ()=>{
-        navigate(`details/${id}`)
+        navigate(`details/${unid}`)
     }
     return <div className="col-6">
         <div className="card hover-pointer"  onClick={handleNavigate}>

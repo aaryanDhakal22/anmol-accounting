@@ -7,7 +7,7 @@ const StudentDetails = ({profiles}:{profiles :StudentProfile[]})=>{
     let searchId = useParams()
     console.log(profiles)
     const found_profile = profiles.filter((item)=>{
-        return item.id === searchId['id']
+        return item.unid === searchId['unid']
     })[0]
     return (
         <>

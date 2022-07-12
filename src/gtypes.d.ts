@@ -1,6 +1,6 @@
 
 export interface StudentProfile{
-    id:string
+    unid:string
     name:string
     group:string
     address:string
