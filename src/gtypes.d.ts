@@ -17,3 +17,19 @@ export interface StudentProfile{
     monthlyCharge:number
     snacks:number
 }
+
+export interface TransactionProfile{
+    studentunid:string
+    transactionunid:string
+    date:string
+    paidAmount:int
+    forMonth:string
+    therapy: number 
+    speechTherapy:number
+    transportation: number 
+    admissionCharge:number
+    monthlyCharge:number
+    snacks:number
+    paid:boolean
+
+}

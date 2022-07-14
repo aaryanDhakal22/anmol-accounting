@@ -1,7 +1,7 @@
 import React from "react";
 import {useParams} from 'react-router-dom'
 import { StudentProfile } from "../../gtypes";
-import { FormikConfig, replace, useFormik } from "formik";
+import { FormikConfig, useFormik } from "formik";
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 const StudentDetails = ({profiles}:{profiles :StudentProfile[]})=>{
@@ -27,6 +27,9 @@ const StudentDetails = ({profiles}:{profiles :StudentProfile[]})=>{
             })
         }
     }as FormikConfig<StudentProfile>)
+
+
+
     return (
         <form onSubmit={formik.handleSubmit}>
             <label htmlFor="name">Name</label>
