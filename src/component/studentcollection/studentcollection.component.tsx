@@ -13,7 +13,7 @@ const StudentCollection = ({searchStd,profiles}:{searchStd :string,profiles:Stud
     return <div>
     <div className="row gy-5" >
     {filtered_profiles.map((profile)=>{
-        return  <StudentTile profile={profile}/>
+        return  <StudentTile key ={profile.unid} profile={profile}/>
     })} 
 
     </div>

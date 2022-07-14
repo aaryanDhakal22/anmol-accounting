@@ -13,8 +13,8 @@ const Student = ()=>{
     const [profiles,setProfiles] = React.useState<StudentProfile[]>(STUDENT_DATA)
     const [webState,setWebState] = React.useState<string>("LOADING")
     React.useEffect(()=>{
-        fetch("https://djangostudenttestapi.herokuapp.com/students/").
-        then((response)=>{
+        fetch("https://djangostudenttestapi.herokuapp.com/student/")
+        .then((response)=>{
             return response.json()
         }).then((json)=>{
             setProfiles(json)
