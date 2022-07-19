@@ -1,10 +1,8 @@
 import React from "react";
-import { StudentProfile } from "../../gtypes";
+import { StudentProfile } from "../../../gtypes";
 import FeeTile from "../feetile/feetile.component";
 const FeesCollection = ({searchFeeStd,profiles}:{searchFeeStd :string,profiles:StudentProfile[]})=>{
-
     
-
     const filtered_profiles = profiles.filter((item)=>{
         return item.name.toLocaleLowerCase().includes(searchFeeStd.toLocaleLowerCase())
     }) 

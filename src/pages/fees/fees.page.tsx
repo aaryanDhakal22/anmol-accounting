@@ -4,8 +4,8 @@ import TextField from "@mui/material/TextField";
 import STUDENT_DATA from "../../studentData";
 import {StudentProfile} from "../../gtypes";
 
-import FeesCollection from "../../component/feescollection/feescollection.component";
-import FeesDetails from "../../component/feesdetails/feesdetails.component";
+import FeesCollection from "../../component/fees/feescollection/feescollection.component";
+import FeesDetails from "../../component/fees/feesdetails/feesdetails.component";
 
 const Fees = ()=>{
 

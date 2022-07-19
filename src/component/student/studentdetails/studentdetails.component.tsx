@@ -1,6 +1,6 @@
 import React from "react";
 import {useParams} from 'react-router-dom'
-import { StudentProfile } from "../../gtypes";
+import { StudentProfile } from "../../../gtypes";
 import { FormikConfig, useFormik } from "formik";
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'

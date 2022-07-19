@@ -18,7 +18,7 @@ export interface StudentProfile{
     snacks:number
 }
 
-export interface TransactionProfile{
+export interface NotificationProfile{
     studentunid:string
     transactionunid:string
     date:string

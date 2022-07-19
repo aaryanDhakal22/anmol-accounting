@@ -1,6 +1,10 @@
 import React from "react";
-import { TransactionProfile } from "../../gtypes";
-const Transaction = ({tsc}:{tsc:TransactionProfile})=>{
+import { useNavigate } from "react-router-dom";
+import { NotificationProfile } from "../../../gtypes";
+const NotificationTile = ({tsc}:{tsc:NotificationProfile})=>{
+
+    const navigate = useNavigate()
+
     const month_index :any ={
         "1" : "Baisakh",
         "2" : "Jestha",
@@ -14,6 +18,9 @@ const Transaction = ({tsc}:{tsc:TransactionProfile})=>{
         "10":"Magh",
         "11":"Falgun",
         "12":"Chaitra"
+    }
+    const handleNavigate=()=>{
+        navigate('/')
     }
     return (
         <div className="col-6">
@@ -30,4 +37,4 @@ const Transaction = ({tsc}:{tsc:TransactionProfile})=>{
     )
 }
 
-export default Transaction
+export default NotificationTile

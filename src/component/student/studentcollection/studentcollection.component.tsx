@@ -1,6 +1,6 @@
 import React from "react";
 import StudentTile from "../studenttile/studenttile.component";
-import { StudentProfile } from "../../gtypes";
+import { StudentProfile } from "../../../gtypes";
 const StudentCollection = ({searchStd,profiles}:{searchStd :string,profiles:StudentProfile[]})=>{
 
     

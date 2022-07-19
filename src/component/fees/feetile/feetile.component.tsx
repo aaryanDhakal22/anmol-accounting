@@ -1,6 +1,6 @@
 import React from "react";
 import {useNavigate} from 'react-router-dom'
-import {  StudentProfile } from "../../gtypes";
+import {  StudentProfile } from "../../../gtypes";
 import './feetile.styles.css'
 
 const FeeTile =(profile: {profile:StudentProfile})=>{

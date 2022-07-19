@@ -1,7 +1,7 @@
 import React from "react";
 import {Route,Routes } from "react-router-dom";
-import StudentCollection from "../../component/studentcollection/studentcollection.component";
-import StudentDetails from "../../component/studentdetails/studentdetails.component";
+import StudentCollection from "../../component/student/studentcollection/studentcollection.component";
+import StudentDetails from "../../component/student/studentdetails/studentdetails.component";
 import TextField from "@mui/material/TextField";
 import STUDENT_DATA from "../../studentData";
 import {StudentProfile } from "../../gtypes";
@@ -9,9 +9,10 @@ import {StudentProfile } from "../../gtypes";
 const Student = ()=>{
 
     const [searchstd,setSearchStd] = React.useState<string>("")
-    
+
     const [profiles,setProfiles] = React.useState<StudentProfile[]>(STUDENT_DATA)
     const [webState,setWebState] = React.useState<string>("LOADING")
+
     React.useEffect(()=>{
         fetch("https://djangostudenttestapi.herokuapp.com/student/")
         .then((response)=>{
