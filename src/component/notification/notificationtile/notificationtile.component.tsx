@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { NotificationProfile } from "../../../gtypes";
-const NotificationTile = ({tsc}:{tsc:NotificationProfile})=>{
+import { Notification } from "../../../gtypes";
+const NotificationTile = ({tsc}:{tsc:Notification})=>{
 
     const navigate = useNavigate()
 
@@ -28,8 +28,8 @@ const NotificationTile = ({tsc}:{tsc:NotificationProfile})=>{
             <div className="card-body">
                 <div className="card-title h4">{tsc.date}</div>
                 <div className="card-text">
-                    <p>Amount : {tsc.paidAmount}</p>
-                    <p>For Month: {month_index[tsc.forMonth]}</p>
+                    <p>Amount : {tsc.amount}</p>
+                    <p>For Month: {month_index[tsc.tuition]}</p>
                 </div>
             </div>
         </div>

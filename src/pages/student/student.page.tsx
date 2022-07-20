@@ -1,52 +1,42 @@
 import React from "react";
-import {Route,Routes } from "react-router-dom";
-import StudentCollection from "../../component/student/studentcollection/studentcollection.component";
-import StudentDetails from "../../component/student/studentdetails/studentdetails.component";
+import {Route,Routes, NavLink } from "react-router-dom";
 import TextField from "@mui/material/TextField";
-import STUDENT_DATA from "../../studentData";
-import {StudentProfile } from "../../gtypes";
+import Collection from "../../component/collection/collection.component";
 
-const Student = ()=>{
+import Details from "../../component/details/details.component";
 
+const StudentPage = ()=>{
+    // The Search query State
     const [searchstd,setSearchStd] = React.useState<string>("")
 
-    const [profiles,setProfiles] = React.useState<StudentProfile[]>(STUDENT_DATA)
-    const [webState,setWebState] = React.useState<string>("LOADING")
 
-    React.useEffect(()=>{
-        fetch("https://djangostudenttestapi.herokuapp.com/student/")
-        .then((response)=>{
-            return response.json()
-        }).then((json)=>{
-            setProfiles(json)
-            setWebState("LOADED")
-        }).catch((error)=>{
-            console.log(error)
-        })
-        },[])
-        
+    // Handles the search Query callback
     const handleChange= (e:React.ChangeEvent<HTMLInputElement>)=>{
         const new_search = e.currentTarget.value
         setSearchStd(new_search)
     }
-    if(webState==="LOADING"){
-        return <div className="display-1">LOADING...</div>
-    }else{
 
-        return (
-            <>
-            <TextField
-            id="outlined-name"
-            label="Search Student"
-            value={searchstd}
-            onChange={handleChange}
-            />
-            <Routes>
-                <Route path="/" element={<StudentCollection searchStd={searchstd} profiles = {profiles}/>} />
-                <Route path="/details/:unid" element= {<StudentDetails profiles={profiles} />}/>
-            </Routes>
-            </>
-        )
-    }
+    // Handle the add
+    return (
+        <>
+        <TextField
+        id="outlined-name"
+        label="Search Student"
+        value={searchstd}
+        onChange={handleChange}
+        />
+
+        <NavLink to="/student/add/" replace={false}><button>Add</button></NavLink>
+
+        <Routes>
+            <Route path="/" element={<Collection searchStd={searchstd} />} />
+            <Route path="/add/" element={<Details/>}></Route>
+            <Route path="/details/:studentId" element={<Details/>} />
+            {/* <Route path="/details/:unid" element= {<StudentDetails profiles={ImageData} />}/> */}
+        </Routes>
+        </>
+    )
+    
+    
 }
-export default Student
+export default StudentPage

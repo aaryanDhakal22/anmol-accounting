@@ -1,26 +1,19 @@
-import React from 'react';
-import './App.css';
 import {Route,Routes} from 'react-router-dom'
-import Student from './pages/student/student.page';
-import Fees from './pages/fees/fees.page';
-import Nav from './component/tempnav.component';
+import { Navbar } from './component/navbar/navbar.collection';
 
-
-
+import StudentPage from './pages/student/student.page';
 
 function App() {
 
-
   return (
-    <div>
-        <Nav/>
-        <Routes>
-          <Route path='student/*' element={<Student/>} />
-          <Route path='fees/*' element={<Fees/>} />
-          
-        </Routes>
-    </div>
-  );
+      <div>
+          <Navbar/>
+          <Routes>
+            <Route path='student/*' element={<StudentPage/>} />
+            <Route path='fees/*' element={<StudentPage/>} />
+          </Routes>
+      </div>
+    )
 }
 
 export default App;

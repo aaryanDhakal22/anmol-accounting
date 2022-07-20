@@ -1,35 +1,48 @@
 
-export interface StudentProfile{
-    unid:string
+export interface Student{
+    studentId:string
     name:string
-    group:string
-    address:string
-    age:number
     phone:number
-    dob: string
+    age:number
+    group:string
     gender:string
     father:string
     mother:string
-    therapy: number 
+    address:string
+    dob: string
     speechTherapy:number
+    therapy: number 
     transportation: number 
-    admissionCharge:number
-    monthlyCharge:number
+    tuition:number
     snacks:number
+    isAdmission:boolean
 }
 
-export interface NotificationProfile{
-    studentunid:string
-    transactionunid:string
+export interface Notification{
+    studentId:string
+    transactionId:string
+    notificationId:string
     date:string
-    paidAmount:int
-    forMonth:string
-    therapy: number 
+    amount:int
+    month:string
     speechTherapy:number
+    therapy: number 
     transportation: number 
-    admissionCharge:number
-    monthlyCharge:number
+    extras:number
+    note : string
+    tuition:number
     snacks:number
     paid:boolean
+}
 
+export interface Transaction{
+    transactionId:string
+    date:string
+    type:string
+    subType:string
+    payer:string
+    note:string
+    amount:int
+    mode:string
+    
 }
