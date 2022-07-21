@@ -1,7 +1,9 @@
-import {Route,Routes} from 'react-router-dom'
-import { Navbar } from './component/navbar/navbar.collection';
+import { Route, Routes } from "react-router-dom";
 
-import StudentPage from './pages/student/student.page';
+import { Navbar } from "./component/navbar/navbar.collection";
+import FeesPage from "./pages/fees/fees.page";
+import NotificationPage from "./pages/notifications/notification.page";
+import StudentPage from "./pages/student/student.page";
 
 function App() {
 
@@ -10,7 +12,8 @@ function App() {
           <Navbar/>
           <Routes>
             <Route path='student/*' element={<StudentPage/>} />
-            <Route path='fees/*' element={<StudentPage/>} />
+            <Route path='fees/*' element={<FeesPage/>} />
+            <Route path='notification/*' element={<NotificationPage/>} ></Route>
           </Routes>
       </div>
     )

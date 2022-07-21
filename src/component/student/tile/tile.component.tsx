@@ -1,7 +1,9 @@
+import "./tile.styles.css";
+
 import React from "react";
-import {useLocation, useNavigate} from 'react-router-dom'
-import {  Student} from "../../gtypes";
-import './tile.styles.css'
+import { useLocation, useNavigate } from "react-router-dom";
+
+import { Student } from "../../../gtypes";
 
 const Tile =({profile}:{profile:Student})=>{
     const {name,group,age,phone,address,studentId} = profile
@@ -13,7 +15,7 @@ const Tile =({profile}:{profile:Student})=>{
 
             navigate(`/student/details/${studentId}`)
         }else{
-            navigate(`/notification/${studentId}`)
+            navigate(`/fees/${studentId}`)
         }
     }
     return <div className="col-6">

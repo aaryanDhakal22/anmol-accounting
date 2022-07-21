@@ -1,9 +1,10 @@
-import React from "react";
-import {Route,Routes, NavLink } from "react-router-dom";
 import TextField from "@mui/material/TextField";
-import Collection from "../../component/collection/collection.component";
+import React from "react";
+import { NavLink, Route, Routes } from "react-router-dom";
 
-import Details from "../../component/details/details.component";
+import Collection from "../../component/student/collection/collection.component";
+import Details from "../../component/student/details/details.component";
+
 
 const StudentPage = ()=>{
     // The Search query State
@@ -16,7 +17,7 @@ const StudentPage = ()=>{
         setSearchStd(new_search)
     }
 
-    // Handle the add
+    // Handle the add and details
     return (
         <>
         <TextField
@@ -31,7 +32,7 @@ const StudentPage = ()=>{
         <Routes>
             <Route path="/" element={<Collection searchStd={searchstd} />} />
             <Route path="/add/" element={<Details/>}></Route>
-            <Route path="/details/:studentId" element={<Details/>} />
+            <Route path="/details/:studentId" element={<Details/>} /> 
             {/* <Route path="/details/:unid" element= {<StudentDetails profiles={ImageData} />}/> */}
         </Routes>
         </>

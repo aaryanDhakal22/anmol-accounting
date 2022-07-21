@@ -1,28 +1,19 @@
-import { Button, TextField } from "@mui/material"
-import { FormikConfig, useFormik } from "formik"
-import { Student } from "../../gtypes"
-
-const AccountForm = ({student}:{student:Student})=>{
-    const formik= useFormik<Student>({
-        initialValues: student,
-        onSubmit:(values)=>{
-            const putURL = "https://anmolsec.com/student/details/"+values.studentId
-            fetch(putURL,{
-                method:"put",
-                headers:{
-                    'Accept':'application/json',
-                    'Content-Type': 'application/json'},
-                body: JSON.stringify(values)
-            })
-            .then(()=>{
-                window.location.replace("/student/")
-            })
+import { FormikConfig, useFormik } from "formik";
+import { useUpdateNotification } from "../../../hooks/useNotification";
+import { Notification } from "../../../gtypes";
+import { Button, TextField } from "@mui/material";
+const NotificationEditForm = ({notification}:{notification:Notification})=>{
+    const {mutate:updateNotification} = useUpdateNotification()
+    const formik= useFormik<Notification>({
+        initialValues: notification,
+        onSubmit:(values:Notification)=>{
+            updateNotification(values)
         }
-    }as FormikConfig<Student>)
+    }as FormikConfig<Notification>)
     return (
         
-        <form>
-             <label htmlFor="therapy">therapy</label>
+        <form onSubmit={formik.handleSubmit}>
+            <label htmlFor="therapy">Therapy</label>
             <TextField
             variant="outlined"
                 id="therapy"
@@ -31,7 +22,7 @@ const AccountForm = ({student}:{student:Student})=>{
                 onChange={formik.handleChange}
                 value={formik.values.therapy}
             /><br></br>
-            <label htmlFor="speechTherapy">speechTherapy</label>
+            <label htmlFor="speechTherapy">Speech Therapy</label>
             <TextField
             variant="outlined"
                 id="speechTherapy"
@@ -40,7 +31,7 @@ const AccountForm = ({student}:{student:Student})=>{
                 onChange={formik.handleChange}
                 value={formik.values.speechTherapy}
             /><br></br>
-            <label htmlFor="transportation">transportation</label>
+            <label htmlFor="transportation">Transportation</label>
             <TextField
             variant="outlined"
                 id="transportation"
@@ -71,6 +62,6 @@ const AccountForm = ({student}:{student:Student})=>{
             <Button variant="contained" type="submit">Submit</Button>
         </form>
         )
-    
 }
-export default AccountForm
+
+export default NotificationEditForm

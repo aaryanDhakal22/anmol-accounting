@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Student } from "../gtypes";
 
 const putClient = axios.create({
     baseURL:"https://anmolsec.com/api",
@@ -24,7 +23,7 @@ const getClient = axios.create({
     method:'get'
 })
 
-export const getReq = ({...options}):Promise<Student[]>=>{
+export const getReq = ({...options})=>{
     const onSuccess = (response:any) => response.data
     const onError = (error:Error)=>{
         console.log(error)

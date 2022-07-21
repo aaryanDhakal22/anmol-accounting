@@ -20,7 +20,7 @@ export const dateFormatter= (date:string)=>{
     month = month.padStart(2,"0")
   }
 
-  
+  // console.log(month,day)
     return year+"-"+month+'-'+day
   }
 

@@ -1,12 +1,12 @@
 import React from "react";
-import { useStudentQuery } from "../../hooks/useStudentQuery";
+import { useStudentQuery } from "../../../hooks/useStudentQuery";
 import Tile from "../tile/tile.component";
 
 interface CollectionProps{
     searchStd:string
 }
 
-const Collection = ({searchStd}:CollectionProps)=>{
+const StudentCollection= ({searchStd}:CollectionProps)=>{
     const profiles = useStudentQuery()
 
     if(profiles.isLoading){
@@ -37,4 +37,4 @@ const Collection = ({searchStd}:CollectionProps)=>{
     return <div>An Error has Occured</div>
 }
 
-export default Collection
+export default StudentCollection

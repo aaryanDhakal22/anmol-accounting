@@ -1,4 +1,4 @@
-import { useMutation, useQuery, UseQueryResult } from "@tanstack/react-query";
+import { useMutation, useQuery, UseQueryResult, useQueryClient } from "@tanstack/react-query";
 import {Student} from '../gtypes'
 import { getReq,putReq } from "../utils/axios-utils";
 import { dateFormatter } from "../utils/temp_dateformatter";
@@ -6,6 +6,9 @@ import { dateFormatter } from "../utils/temp_dateformatter";
 
 const updateStudent = (student:Student):Promise<Student>=>{
     return putReq({url:`/student/details/${student.studentId}`, method:"put",data:student})
+}
+const addStudent = (student:Student):Promise<Student>=>{
+    return putReq({url:'/student/', method:"post",data:student})
 }
 
 const fetchStudent = ():Promise<Student[]>=>{
@@ -16,6 +19,7 @@ export const useStudentQuery = ():UseQueryResult<Student[]>=>{
     return useQuery<Student[],Error>(['students'],fetchStudent,{
         // cacheTime:5000,
         staleTime:10000,
+        refetchOnWindowFocus:false,
         select:(data)=>{
             return data.map((student)=>{
                 return {...student,dob:dateFormatter(student.dob)}
@@ -28,5 +32,18 @@ export const useStudentQuery = ():UseQueryResult<Student[]>=>{
     )
 }
 export const useUpdateStudentData = ()=>{
-    return useMutation(updateStudent)
+    const queryClient = useQueryClient()
+    return useMutation(updateStudent,{
+        onSuccess: ()=>{
+            queryClient.invalidateQueries(['students'])
+        }
+    })
+}
+export const useAddStudentData = ()=>{
+    const queryClient = useQueryClient()
+    return useMutation(addStudent,{
+        onSuccess: ()=>{
+            queryClient.invalidateQueries(['students'])
+        }
+    })
 }
