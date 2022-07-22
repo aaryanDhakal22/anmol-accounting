@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient, UseQueryResult } from "@tanstack/react-query";
-
+import axios from "axios";
 import { Notification } from "../gtypes";
-import { getReq, putReq } from "../utils/axios-utils";
+import { getReq, putReq, deleteReq} from "../utils/axios-utils";
 import { dateFormatter } from "../utils/temp_dateformatter";
 
 const updateNotification = (notification:Notification):Promise<Notification>=>{
@@ -16,11 +16,9 @@ const fetchNotification = ():Promise<Notification[]>=>{
    return getReq({url:'/notification/'})
 }
 
-
 export const useNotificationQuery = ():UseQueryResult<Notification[]>=>{
     
     return useQuery<Notification[],Error>(['notifications'],fetchNotification,{
-        staleTime:5000,
         refetchOnWindowFocus:false,
         select:(data)=>{ 
             return data.map((notification)=>{
@@ -44,4 +42,11 @@ export const useAddNotification = ()=>{
             queryClient.invalidateQueries(['notifications'])
         }
     })
+}
+
+export const deleteNotification = (notificationId:string,redirect:any)=>{
+    
+    // axios.delete(`www.anmolsec.com/api/notification/details/${notificationId}`)
+    deleteReq({url:`/notification/details/${notificationId}`})
+    redirect()
 }

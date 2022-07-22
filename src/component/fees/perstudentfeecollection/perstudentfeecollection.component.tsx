@@ -54,9 +54,12 @@ const PerStudentFeeCollection = ()=>{
             value={month}
             onChange={handleMonthChange}
             />
-                {notsOfStudent.map((notification)=>{
+                {notsOfStudent.filter((item)=>{
+                    return item.date.includes(year) && item.month.toLowerCase().includes(month.toLowerCase())
+                }).map((notification)=>{
                     return <LinedTile key={notification.notificationId} onClick={()=>navigate(`/notification/edit/${notification.notificationId}`)}  left={notification.date} center={notification.month} right={notification.amount} />
                 })}
+                <LinedTile  onClick={()=>navigate(`/notification/add/`)}  left={""} center={"(+) Add"} right={""} />
             </>
         )
     }

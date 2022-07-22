@@ -18,7 +18,6 @@ const fetchStudent = ():Promise<Student[]>=>{
 export const useStudentQuery = ():UseQueryResult<Student[]>=>{
     return useQuery<Student[],Error>(['students'],fetchStudent,{
         // cacheTime:5000,
-        staleTime:10000,
         refetchOnWindowFocus:false,
         select:(data)=>{
             return data.map((student)=>{

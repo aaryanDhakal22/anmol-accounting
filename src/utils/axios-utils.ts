@@ -30,3 +30,15 @@ export const getReq = ({...options})=>{
     }
     return getClient(options).then(onSuccess).catch(onError)
 }
+const deleteClient = axios.create({
+    baseURL:"https://anmolsec.com/api",
+    method:'delete'
+})
+
+export const deleteReq = ({...options})=>{
+    const onSuccess = (response:any) => response
+    const onError = (error:Error)=>{
+        console.log(error)
+    }
+    return deleteClient(options).then(onSuccess).catch(onError)
+}

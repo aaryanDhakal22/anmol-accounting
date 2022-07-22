@@ -32,7 +32,7 @@ export interface Notification{
     note : string
     tuition:number
     snacks:number
-    paid:boolean
+    paid:string
 }
 
 export interface Transaction{
