@@ -21,6 +21,9 @@ export const Navbar = ()=>{
 
     return (
         <>
+        <h1 className="text-3xl from-neutral-700  underline">
+      Hello world!
+    </h1>
         <p onClick={transactionNavigate} > (+)Transaction</p>
         <p onClick={studentNavigate}>STUDENT</p>
         <p onClick={feesNavigate} >FEES</p>
