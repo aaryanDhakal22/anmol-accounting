@@ -9,15 +9,22 @@ export const Navbar = ()=>{
     const feesNavigate = ()=>{
         navigate('/fees')
     }
+    const creditNavigate = ()=>{
+        navigate('/credit')
+    }
+    const debitNavigate = ()=>{
+        navigate('/debit')
+    }
     const transactionNavigate = ()=>{
         navigate('/transaction/add')
     }
 
     return (
         <>
+        <p onClick={transactionNavigate} > (+)Transaction</p>
         <p onClick={studentNavigate}>STUDENT</p>
         <p onClick={feesNavigate} >FEES</p>
-        <p onClick={transactionNavigate} > (+)Transaction</p>
+        <p onClick={creditNavigate} >C/D</p>
         </>
     )
 }

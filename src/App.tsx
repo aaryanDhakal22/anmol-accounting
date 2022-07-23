@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import { Navbar } from "./component/navbar/navbar.collection";
+import CreditPage from "./pages/credit/credit.page";
 import FeesPage from "./pages/fees/fees.page";
 import NotificationPage from "./pages/notifications/notification.page";
 import StudentPage from "./pages/student/student.page";
@@ -16,6 +17,8 @@ function App() {
             <Route path='fees/*' element={<FeesPage/>} />
             <Route path='notification/*' element={<NotificationPage/>} ></Route>
             <Route path='transaction/*' element={<TransactionPage/>} ></Route>
+            <Route path='credit/*' element={<CreditPage/>} ></Route>
+
           </Routes>
       </div>
     )
