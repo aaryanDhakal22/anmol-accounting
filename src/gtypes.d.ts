@@ -23,7 +23,7 @@ export interface Notification{
     transactionId:string
     notificationId:string
     date:string
-    amount:int
+    amount:number
     month:string
     speechTherapy:number
     therapy: number 
@@ -38,11 +38,11 @@ export interface Notification{
 export interface Transaction{
     transactionId:string
     date:string
-    type:string
+    type:"SchoolMaintainance" | "Donation" |"Supplies"| "Bills" | "Kitchen"
     subType:string
     payer:string
     note:string
-    amount:int
+    amount:number
     mode:string
     
 }

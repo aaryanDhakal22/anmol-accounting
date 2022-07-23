@@ -4,6 +4,7 @@ import { Navbar } from "./component/navbar/navbar.collection";
 import FeesPage from "./pages/fees/fees.page";
 import NotificationPage from "./pages/notifications/notification.page";
 import StudentPage from "./pages/student/student.page";
+import TransactionPage from "./pages/transaction/transaction.page";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
             <Route path='student/*' element={<StudentPage/>} />
             <Route path='fees/*' element={<FeesPage/>} />
             <Route path='notification/*' element={<NotificationPage/>} ></Route>
+            <Route path='transaction/*' element={<TransactionPage/>} ></Route>
           </Routes>
       </div>
     )

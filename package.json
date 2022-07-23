@@ -22,6 +22,7 @@
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
     "typescript": "^4.4.2",
+    "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -47,9 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-    
   },
-  "resolutions":{
-    "autoprefixer":"10.4.5"
+  "resolutions": {
+    "autoprefixer": "10.4.5"
   }
 }

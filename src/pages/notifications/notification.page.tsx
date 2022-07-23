@@ -9,7 +9,7 @@ const NotificationPage = ()=>{
 
         <>
         <Routes>
-            <Route path="/add/" element={<NotificationAdd/>}></Route>
+            <Route path="/add/:studentId" element={<NotificationAdd/>}></Route>
             <Route path="/edit/:notificationId" element={<NotificationEdit/>} /> 
         </Routes>
         </>
