@@ -7,7 +7,9 @@ const NotificationEditForm = ({notification}:{notification:Notification})=>{
     const formik= useFormik<Notification>({
         initialValues: notification,
         onSubmit:(values:Notification)=>{
-            updateNotification(values)
+            const totalSum = values.speechTherapy + values.therapy + values.transportation + values.snacks + values.tuition + values.extras
+            const finalValues = {...values,amount:totalSum}
+            updateNotification(finalValues)
         }
     }as FormikConfig<Notification>)
     return (

@@ -3,6 +3,7 @@ import React, { ChangeEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useNotificationQuery } from "../../../hooks/useNotification";
 import LinedTile from "../../lined_tile/linedtile.component"
+import Totaller from "../../totaller/totaller.component";
 
 const PerStudentFeeCollection = ()=>{
     const navigate = useNavigate()
@@ -38,6 +39,13 @@ const PerStudentFeeCollection = ()=>{
         const notsOfStudent = notifications.data.filter((item)=>{
             return item.studentId===searchStudentId
         })
+        const filteredNots = notsOfStudent.filter((item)=>{
+            return item.date.includes(year) && item.month.toLowerCase().includes(month.toLowerCase())
+        })
+        let totalSum = 0
+        filteredNots.forEach(item=>{
+            totalSum+=item.amount
+        })
         return (
             <>
             <TextField
@@ -54,12 +62,11 @@ const PerStudentFeeCollection = ()=>{
             value={month}
             onChange={handleMonthChange}
             />
-                {notsOfStudent.filter((item)=>{
-                    return item.date.includes(year) && item.month.toLowerCase().includes(month.toLowerCase())
-                }).map((notification)=>{
+                {filteredNots.map((notification)=>{
                     return <LinedTile key={notification.notificationId} onClick={()=>navigate(`/notification/edit/${notification.notificationId}`)}  left={notification.date} center={notification.month} right={notification.amount.toString()} />
                 })}
                 <LinedTile  onClick={()=>navigate(`/notification/add/${notifications.data[0].studentId}`)}  left={""} center={"(+) Add"} right={""} />
+                <Totaller amount={totalSum} />
             </>
         )
     }

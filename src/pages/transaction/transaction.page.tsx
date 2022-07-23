@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import TransactionEdit from "../../component/notification/notificationedit/notificationedit.component";
 import TransactionAdd from "../../component/transaction/transactionadd/transactionadd.componenet";
+import TransactionEdit from "../../component/transaction/transactionedit/transactionedit.componenet";
 
 const TransactionPage = ()=>{
 
