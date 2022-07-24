@@ -48,24 +48,18 @@ const PerStudentFeeCollection = ()=>{
         })
         return (
             <>
-            <TextField
-            type="number"
-            id="outlined-name"
-            label="Year"
-            value={year}
-            onChange={handleYearChange}
-            />
-            <TextField
-            type="text"
-            id="outlined-name"
-            label="For Month"
-            value={month}
-            onChange={handleMonthChange}
-            />
+            <div className=" topbar">
+                <button className="btn mr-auto ml-20" onClick={()=>navigate(`/notification/add/${notifications.data[0].studentId}`)} >(+)Add</button>
+                <input  className="topbar-text " placeholder="YEAR" type="number"id="outlined-name"value={year}onChange={handleYearChange}/>
+                <input  className="topbar-text mr-20" placeholder="MONTH"  type="text"id="outlined-name"value={month}onChange={handleMonthChange}/>
+            </div>
+                <div className="grid grid-cols-2 gap-5 p-10 mt-5">
+                {/* <LinedTile    left={""} center={"(+) Add"} right={""} /> */}
                 {filteredNots.map((notification)=>{
-                    return <LinedTile key={notification.notificationId} onClick={()=>navigate(`/notification/edit/${notification.notificationId}`)}  left={notification.date} center={notification.month} right={notification.amount.toString()} />
+                    return <LinedTile key={notification.notificationId} onClick={()=>navigate(`/notification/edit/${notification.notificationId}`)}  left={notification.date} center={notification.month+", "+notification.year} right={'Rs.'+notification.amount.toString()} />
                 })}
-                <LinedTile  onClick={()=>navigate(`/notification/add/${notifications.data[0].studentId}`)}  left={""} center={"(+) Add"} right={""} />
+                
+                </div>
                 <Totaller amount={totalSum} />
             </>
         )

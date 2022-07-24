@@ -1,35 +1,48 @@
-import "./tile.styles.css";
+
 
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { Student } from "../../../gtypes";
+import { useFeeStatus } from "../../../hooks/useFeeStatus";
+import { useNotificationQuery } from "../../../hooks/useNotification";
+import { feePaidStatus } from "../../../utils/feePaidStatus";
 
 const FeeTile =({profile}:{profile:Student})=>{
     const {name,group,age,phone,address,studentId} = profile
     const navigate = useNavigate()
-    const location = useLocation()
+
+    const fee_status = useFeeStatus(studentId)
     const handleNavigate = ()=>{
-        if(location.pathname==="/student"){
-            navigate(`/student/details/${studentId}`)
-        }else{
             navigate(`/fees/${studentId}`)
-        }
     }
-    return <div className="col-6">
-        <div className="card hover-pointer"  onClick={handleNavigate}>
-            <div className="card-body">
-                <div className="card-title h4">{name}</div>
-                <div className="card-text">
-                <p>Group : {group}</p>
-                <p>Age : {age}</p>
-                <p>Phone : {phone}</p>
-                <p>Address : {address}</p>       
+    if(fee_status.isLoading){
+        return <div>Loading</div>
+    }
+    if(fee_status.isError){
+        return <div>error in fee status</div>
+    }
+    if(fee_status.isSuccess){
+        const paidClass = "feePaid"
+        const unpaidClass = "feeUnpaid"
+
+        const feeStatusClass = fee_status.data.status==="paid"?paidClass:unpaidClass
+
+    return (
+        <div className={feeStatusClass+" feeTile "} onClick={handleNavigate}>
+            <div className="text-white">
+                <div className="text-4xl"><span className="text-primaryText">Name </span>: {name}</div><br></br>
+                <div className="">
+                    <p><span className="text-primaryText text-xl">Group</span> : {group}</p>
+                    <p><span className="text-primaryText text-xl">Age</span> : {age}</p>
+                    <p><span className="text-primaryText text-xl">Phone</span> : {phone}</p>
+                    <p><span className="text-primaryText text-xl">Address</span> : {address}</p>       
                 </div>
             </div>
         </div>
-        
-        </div>
+    )
+    }
+    return <div>Unknown error occured</div>
 }
 
 export default FeeTile

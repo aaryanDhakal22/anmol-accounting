@@ -12,7 +12,7 @@ const initialValues = {
     "payer":'',
     "note":'',
     "amount":0,
-    "mode":'',
+    "paid":'Unpaid',
     
 }
 const typeToSubType :{
@@ -73,7 +73,7 @@ const TransactionAdd = ()=>{
 
             <FormControl sx={{ m: 1, minWidth: 120 }} size="medium">
             <InputLabel id="subTypeLabel">Mode</InputLabel>
-            <Select id="mode" name="mode" value={formik.values.mode} label="Paid" onChange={formik.handleChange}>     
+            <Select id="paid" name="paid" value={formik.values.paid} label="Paid" onChange={formik.handleChange}>     
                 <MenuItem value={"Credit"}>Credit</MenuItem>
                 <MenuItem value={"Debit"}>Debit</MenuItem>
             </Select>

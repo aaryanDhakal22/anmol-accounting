@@ -5,8 +5,7 @@ import { Student } from "../../../gtypes"
 import { useNotificationQuery, useUpdateNotification } from "../../../hooks/useNotification";
 import { useAddStudentData, useUpdateStudentData } from "../../../hooks/useStudentQuery"
 import NotificationEditForm from "../notification_edit_form/notificationeditform.component";
-import { deleteNotification } from "../../../hooks/useNotification";
-
+import {IoArrowBackOutline} from 'react-icons/io5'
 const NotificationEdit = ()=>{
     const params = useParams()
     const notificationId = params["notificationId"]
@@ -30,8 +29,9 @@ const NotificationEdit = ()=>{
         })[0]
         return(
             <>
-            <Button color = "error" onClick={()=>deleteNotification(notification.notificationId,()=>navigate(-1))} >(X) Delete</Button>
-            <Button onClick={()=>navigate(-1)} > Back</Button>
+
+                <button className="btn  ml-16 flex items-center p-3 mt-10 rounded-3xl text-white" onClick={()=>navigate(-1)} ><IoArrowBackOutline style={{"display":"inline","fontSize":"50px"}}/> <span className="text-3xl">BACK</span> </button>
+                
             <NotificationEditForm notification = {notification} />
             </>
         )

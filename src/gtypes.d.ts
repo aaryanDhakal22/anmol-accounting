@@ -25,6 +25,7 @@ export interface Notification{
     date:string
     amount:number
     month:string
+    year:string
     speechTherapy:number
     therapy: number 
     transportation: number 
@@ -32,7 +33,7 @@ export interface Notification{
     note : string
     tuition:number
     snacks:number
-    paid:string
+    paid:'Unpaid'| 'EPay' | 'Cash'
 }
 
 export interface Transaction{
@@ -43,6 +44,6 @@ export interface Transaction{
     payer:string
     note:string
     amount:number
-    mode:string
+    paid:'Unpaid'| 'EPay' | 'Cash'
     
 }

@@ -60,12 +60,16 @@ const Details = ()=>{
 
         return(
             <>
-            <br/>
-            <br/>
-            <Button variant="contained" onClick={ ()=>handleFormState("Personal")} >Personal</Button>
-            <Button variant="contained" onClick={ ()=>handleFormState("Account")}  >Account</Button>
-            {formState ==="Account" && <AccountForm toAdd={toAdd} student={foundStudent} />}
-            {formState ==="Personal" && <PersonalForm toAdd={toAdd} student={foundStudent} />}
+            <div className="grid grid-cols-12 mt-14">
+                <div className="col-start-4 col-span-6 mt-6 text-center">
+                    <button className="btn" onClick={ ()=>handleFormState("Personal")} >Personal</button>
+                    <button className="btn ml-44" onClick={ ()=>handleFormState("Account")}  >Account</button>
+                    <div className="flex flex-col mt-8">
+                        {formState ==="Account" && <AccountForm toAdd={toAdd} student={foundStudent} />}
+                        {formState ==="Personal" && <PersonalForm toAdd={toAdd} student={foundStudent} />}
+                    </div>
+                </div>
+            </div>
             
             </>
         )

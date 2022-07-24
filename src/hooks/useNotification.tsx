@@ -16,6 +16,8 @@ const fetchNotification = ():Promise<Notification[]>=>{
    return getReq({url:'/notification/'})
 }
 
+
+
 export const useNotificationQuery = ():UseQueryResult<Notification[]>=>{
     
     return useQuery<Notification[],Error>(['notifications'],fetchNotification,{

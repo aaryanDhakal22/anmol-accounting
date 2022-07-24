@@ -7,6 +7,7 @@ import { Notification, Student } from "../../../gtypes";
 import { useAddNotification } from "../../../hooks/useNotification";
 import { useStudentQuery } from "../../../hooks/useStudentQuery";
 import randomStrGen from "../../../utils/randomAlNumGen";
+import { FormField } from "../../formfield/formfield.component";
 
 const initialNotificationValues = {
     
@@ -39,6 +40,7 @@ const NotificationAdd = ()=>{
                             'date':'',
                             'amount':0,
                             'month':'',
+                            'year':'',
                             'speechTherapy':initialValues.speechTherapy,
                             'therapy': initialValues.therapy ,
                             'transportation':  initialValues.transportation,
@@ -46,7 +48,7 @@ const NotificationAdd = ()=>{
                             'note' : '',
                             'tuition':initialValues.tuition,
                             'snacks':initialValues.snacks,
-                            'paid':''
+                            'paid':'Unpaid'
 
 }
     const formik= useFormik<Notification>({
@@ -59,34 +61,56 @@ const NotificationAdd = ()=>{
     
     return(
          
+        <div className="grid grid-cols-12 mt-10">
+                <div className="col-start-4 col-span-6 mt-6 text-center">
         <form onSubmit={formik.handleSubmit}>
-            <label htmlFor="date">DATE</label>
-            <TextField  variant="outlined" id="date" name= "date" type= "date" onChange={formik.handleChange}value={formik.values.date}/><br></br>
-            <label htmlFor="month">MONTH</label>
-            <TextField  variant="outlined" id="month" name= "month" type= "text" onChange={formik.handleChange}value={formik.values.month}/><br></br>
-            <label htmlFor="speechTherapy">SPEECH</label>
-            <TextField  variant="outlined" id="speechTherapy" name= "speechTherapy" type= "number" onChange={formik.handleChange}value={formik.values.speechTherapy}/><br></br>
-            <label htmlFor="therapy">THERAPY</label>
-            <TextField  variant="outlined" id="therapy" name= "therapy" type= "number" onChange={formik.handleChange}value={formik.values.therapy}/><br></br>
-            <label htmlFor="transportation">TRANSPORTATION</label>
-            <TextField  variant="outlined" id="transportation" name= "transportation" type= "number" onChange={formik.handleChange}value={formik.values.transportation}/><br></br>
-            <label htmlFor="snacks">SNACKS</label>
-            <TextField  variant="outlined" id="snacks" name= "snacks" type= "number" onChange={formik.handleChange}value={formik.values.snacks}/><br></br>
-            <label htmlFor="extras">EXTRA</label>
-            <TextField  variant="outlined" id="extras" name= "extras" type= "number" onChange={formik.handleChange}value={formik.values.extras}/><br></br>
-            <label htmlFor="note">NOTE</label>
-            <TextField  variant="outlined" id="note" name= "note" type= "text" onChange={formik.handleChange}value={formik.values.note}/><br></br>
-            <label htmlFor="tuition">TUITION</label>
-            <TextField  variant="outlined" id="tuition" name= "tuition" type= "number" onChange={formik.handleChange}value={formik.values.tuition}/><br></br>
-            <label htmlFor="paid">PAID</label>
-            <Select id="paid" name="paid"  value={formik.values.paid} label="Paid" onChange={formik.handleChange}>
-                
+
+            <FormField fieldFor={"date"} type={"date"} handleChange = {formik.handleChange} value ={formik.values.date}  />
+            <div className="formField">
+                <label className="labelField" htmlFor="month">MONTH</label>
+                <select className="inputField" name='month'  value={formik.values.month} onChange={formik.handleChange} id="month">
+                    <option value={"Cash"}>Baisakh</option>
+                    <option value={"Baisakh"}>Baisakh</option>
+                    <option value={"Jestha"}>Jestha</option>
+                    <option value={"Ashar"}>Ashar</option>
+                    <option value={"Shrawan"}>Shrawan</option>
+                    <option value={"Bhadra"}>Bhadra</option>
+                    <option value={"Ashoj"}>Ashoj</option>
+                    <option value={"Kartik"}>Kartik</option>
+                    <option value={"Mangsir"}>Mangsir</option>
+                    <option value={"Poush"}>Poush</option>
+                    <option value={"Magh"}>Magh</option>
+                    <option value={"Falgun"}>Falgun</option>
+                    <option value={"Chaitra"}>Chaitra</option>
+                </select>
+            </div>
+            <FormField fieldFor={"speechTherapy"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.speechTherapy}  />
+            <FormField fieldFor={"therapy"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.therapy}  />
+            <FormField fieldFor={"transportation"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.transportation}  />
+            <FormField fieldFor={"snacks"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.snacks}  />
+            <FormField fieldFor={"extras"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.extras}  />
+            <FormField fieldFor={"note"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.note}  />
+            <FormField fieldFor={"tuition"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.tuition}  />
+
+
+            {/* <label htmlFor="paid">PAID</label>
+            <Select id="paid" name="paid" value={formik.values.paid} label="Paid" onChange={formik.handleChange}>
                 <MenuItem value={"Cash"}>Cash</MenuItem>
                 <MenuItem value={"EPay"}>EPay</MenuItem>
                 <MenuItem value={"Unpaid"}>Unpaid</MenuItem>
-            </Select>
-            <Button variant="contained" type="submit">Submit</Button>
-        </form>
+            </Select> */}
+            <div className="formField">
+                <label className="labelField" htmlFor="paid">PAID</label>
+                <select className="inputField" name='paid'  value={formik.values.paid} onChange={formik.handleChange} id="paid">
+                    <option value={"Cash"}>Cash</option>
+                    <option value={"EPay"}>EPay</option>
+                    <option value={"Unpaid"}>Unpaid</option>
+                </select>
+            </div>
+            <button className="btn mt-10 ml-5" type="submit">SUBMIT</button>
+            </form>
+        </div>
+        </div>
     )
 }
 export default NotificationAdd

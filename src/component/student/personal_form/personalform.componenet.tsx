@@ -1,7 +1,8 @@
-import { Button, MenuItem, Select, TextField } from "@mui/material"
+import { Button} from "@mui/material"
 import { FormikConfig, useFormik } from "formik"
 import { Student } from "../../../gtypes";
 import { useAddStudentData, useUpdateStudentData } from "../../../hooks/useStudentQuery";
+import { FormField } from "../../formfield/formfield.component";
 
 const PersonalForm = ({student,toAdd}:{student:Student,toAdd:boolean})=>{
     const {mutate:updateStudent} = useUpdateStudentData()
@@ -18,91 +19,29 @@ const PersonalForm = ({student,toAdd}:{student:Student,toAdd:boolean})=>{
         }
     }as FormikConfig<Student>)
     return (
-        <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <TextField
-            variant="outlined"
-            id="name"
-            name="name"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.name}
-        /><br></br>
-        <label htmlFor="name">Student ID</label>
-        <TextField
-            variant="outlined"
-            id="studentId"
-            name="studentId"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.studentId}
-        /><br></br>
-        <label htmlFor="group">Group</label>
-        <TextField
-        variant="outlined"
-            id="group"
-            name="group"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.group}
-        /><br></br>
-        <label htmlFor="address">Address</label>
-        <TextField
-        variant="outlined"
-            id="address"
-            name="address"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.address}
-        /><br></br>
-        <label htmlFor="age">Age</label>
-        <TextField
-        variant="outlined"
-            id="age"
-            name="age"
-            type="number"
-            onChange={formik.handleChange}
-            value={formik.values.age}
-        /><br></br>
-        <label htmlFor="phone">Phone</label>
-        <TextField
-        variant="outlined"
-            id="phone"
-            name="phone"
-            type="number"
-            onChange={formik.handleChange}
-            value={formik.values.phone}
-        /><br></br>
-        <label htmlFor="father">father</label>
-        <TextField
-        variant="outlined"
-            id="father"
-            name="father"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.father}
-        /><br></br>
-        <label htmlFor="mother">mother</label>
-        <TextField
-        variant="outlined"
-            id="mother"
-            name="mother"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.mother}
-        /><br></br>
-        <label htmlFor="dob">Birthday</label>
-        <TextField
-        variant="outlined"
-            id="dob"
-            name="dob"
-            type="date"
-            onChange={formik.handleChange}
-            value={formik.values.dob}
-        /><br></br>
-        <label htmlFor="gender">gender</label>
-
-        <Select
+        <form className="" onSubmit={formik.handleSubmit}>
+            {/* <div className="formField">
+                <label className="labelField" htmlFor="name">NAME</label>
+                <input className="inputField" id="name" name="name" type="text" onChange={formik.handleChange} value={formik.values.name}/>
+            </div> */}
+            <FormField fieldFor={"name"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.name}  />
+            <FormField fieldFor={"studentId"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.studentId}  />
+            <FormField fieldFor={"group"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.group}  />
+            <FormField fieldFor={"address"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.address}  />
+            <FormField fieldFor={"age"} type={"number"} handleChange = {formik.handleChange} value ={formik.values.age}  />
+            <FormField fieldFor={"phone"} type={"number"} handleChange = {formik.handleChange} value ={formik.values.phone}  />
+            <FormField fieldFor={"father"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.father}  />
+            <FormField fieldFor={"mother"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.mother}  />
+            <FormField fieldFor={"dob"} type={"date"} handleChange = {formik.handleChange} value ={formik.values.dob}  />
+            <div className="formField">
+                <label className="labelField" htmlFor="gender">GENDER</label>
+                <select className="inputField" name='gender'  value={formik.values.gender} onChange={formik.handleChange} id="gender">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="O">Other</option>
+                </select>
+            </div>
+        {/* <Select
         defaultValue="M"
         id="gender"
         name="gender"
@@ -112,9 +51,9 @@ const PersonalForm = ({student,toAdd}:{student:Student,toAdd:boolean})=>{
         <MenuItem value={"M"}>Male</MenuItem>
         <MenuItem value={"F"}>Female</MenuItem>
         <MenuItem value={"O"}>Other</MenuItem>
-        </Select>
+        </Select> */}
         
-        <Button type = "submit" variant="contained">Submit</Button>
+        <button className="btn mt-3" type = "submit">Submit</button>
     </form>
     )
 
