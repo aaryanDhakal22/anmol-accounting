@@ -66,6 +66,7 @@ const NotificationAdd = ()=>{
         <form onSubmit={formik.handleSubmit}>
 
             <FormField fieldFor={"date"} type={"date"} handleChange = {formik.handleChange} value ={formik.values.date}  />
+            <FormField fieldFor={"year"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.year}  />
             <div className="formField">
                 <label className="labelField" htmlFor="month">MONTH</label>
                 <select className="inputField" name='month'  value={formik.values.month} onChange={formik.handleChange} id="month">

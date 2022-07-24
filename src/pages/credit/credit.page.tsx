@@ -1,5 +1,5 @@
-import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
-import React, { ChangeEvent } from "react";
+import { FormControl, InputLabel,Select, SelectChangeEvent } from "@mui/material";
+import React, { ChangeEvent, ChangeEventHandler, SelectHTMLAttributes } from "react";
 import { Route, Routes } from "react-router-dom";
 import TransactionCollection from "../../component/credit/creditcollection/collection.component";
 
@@ -9,49 +9,49 @@ const typeToSubType :{
     Supplies:string[]
     Bills:string[]
     Kitchen:string[]
+    Select:string[]
 } = {
     Donation:["Invidual","Company"],
     SchoolMaintainance :["Building","Reconstruction","Fixing","Furniture"],
     Supplies:["Stationaries","Toys"],
     Bills:["Electricity","Water","Telephone"],
     Kitchen:["Food","Beverages","Utensils","Pots and Pans"],
+    Select:["Select"]
 }
 
 const CreditPage = ()=>{
 
 
-    const [type,setType] = React.useState<"Donation"|"SchoolMaintainance"|"Supplies"|"Bills"|"Kitchen">("Donation")
+    const [type,setType] = React.useState<"Donation"|"SchoolMaintainance"|"Supplies"|"Bills"|"Kitchen"|"Select">("Select")
     const [subType,setSubType] = React.useState<string>("")
 
-    const handleTypeChange = (e:SelectChangeEvent)=>{
-        setType(e.target.value as "Donation"|"SchoolMaintainance"|"Supplies"|"Bills"|"Kitchen" )
+    const handleTypeChange = (e:ChangeEvent<HTMLSelectElement>)=>{
+        setType(e.currentTarget.value as "Donation"|"SchoolMaintainance"|"Supplies"|"Bills"|"Kitchen" |"Select" )
         setSubType("")
     }
-    const handleSubTypeChange = (e:SelectChangeEvent)=>{
+    const handleSubTypeChange = (e:ChangeEvent<HTMLSelectElement>)=>{
         setSubType(e.target.value as string)
     }
 
     return (
         <>
-        <FormControl sx={{ m: 1, minWidth: 120 }} size="medium">
-            <InputLabel id="subTypeLabel">Type</InputLabel>
-            <Select id="type" name="type" defaultValue={"Donation"} value={type} label="Paid" onChange={handleTypeChange}>     
-                <MenuItem value={"Donation"}>Donation</MenuItem>
-                <MenuItem value={"SchoolMaintainance"}>School Maintainance</MenuItem>
-                <MenuItem value={"Supplies"}>Supplies</MenuItem>
-                <MenuItem value={"Bills"}>Bills</MenuItem>
-                <MenuItem value={"Kitchen"}>Kitchen</MenuItem>
-            </Select>
-        </FormControl>
-        <FormControl sx={{ m: 1, minWidth: 120 }} size="medium">
-            <InputLabel id="subTypeLabel">Sub-Type</InputLabel>
-            <Select id="subType" label="subTypeLabel" labelId="subTypeLabel" name="subType"  value={subType} onChange={handleSubTypeChange}>     
+        <div className="topbar">
+
+            <select className="topbar-text" id="type" name="type" value={type} onChange={handleTypeChange}>     
+                <option value={"Select"}>Select</option>
+                <option value={"Donation"}>Donation</option>
+                <option value={"SchoolMaintainance"}>School Maintainance</option>
+                <option value={"Supplies"}>Supplies</option>
+                <option value={"Bills"}>Bills</option>
+                <option value={"Kitchen"}>Kitchen</option>
+            </select>
+            <select className="topbar-text" id="subType" name="subType"  value={subType} onChange={handleSubTypeChange}>     
+                <option value={"Select"}>Select</option>
                 {typeToSubType[type].map((item:string)=>{
-                    return <MenuItem value={item}>{item}</MenuItem>
+                    return <option key={item} value={item}>{item}</option>
                 })}
-            </Select>
-            </FormControl>
-        <div>{type}  {subType}</div>
+            </select>
+        </div>
         <Routes>
             <Route path="" element={<TransactionCollection type={type} subType ={subType} />}></Route>
         </Routes>

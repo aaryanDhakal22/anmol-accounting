@@ -21,6 +21,7 @@ const NotificationEditForm = ({notification}:{notification:Notification})=>{
         <form onSubmit={formik.handleSubmit}>
 
             <FormField fieldFor={"date"} type={"date"} handleChange = {formik.handleChange} value ={formik.values.date}  />
+            <FormField fieldFor={"year"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.year}  />
             <div className="formField">
                 <label className="labelField" htmlFor="month">MONTH</label>
                 <select className="inputField" name='month'  value={formik.values.month} onChange={formik.handleChange} id="month">
@@ -62,8 +63,8 @@ const NotificationEditForm = ({notification}:{notification:Notification})=>{
                     <option value={"Unpaid"}>Unpaid</option>
                 </select>
             </div>
-            <button className="btn mt-10 ml-5" type="submit">SUBMIT</button>
             <button className="btn bg-dangerRed border-dangerRed active:text-dangerRed mt-10 ml-5" onClick={()=>deleteNotification(notification.notificationId,()=>navigate(-1))}type="button">DELETE</button>
+            <button className="btn mt-10 ml-5" type="submit">SUBMIT</button>
         </form>
         </div>
         </div>

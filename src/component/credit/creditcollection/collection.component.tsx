@@ -22,20 +22,21 @@ const TransactionCollection = ({type,subType}:TransactionCollectionProps)=>{
         }
     }
     if(transactions.isSuccess){
+        console.log(type,subType)
         const allFiltered = transactions.data.filter((item)=>{
-            return item.type ===type && item.subType ===subType
+            return item.type === type && item.subType === subType
         })
         let totalSum = 0
         allFiltered.forEach((item)=>{
             totalSum+=item.amount
         })
         return (
-            <>
+            <div  className="grid grid-cols-2 gap-5 p-10 mt-5">
             {allFiltered.map((item:Transaction)=>{
-                return <LinedTile  onClick={()=>navigate(`/transaction/edit/${item.transactionId}`)} left={item.date} center={item.note} right={item.amount.toString()} />
+                return <LinedTile key={item.transactionId}  onClick={()=>navigate(`/transaction/edit/${item.transactionId}`)} left={item.date} center={item.note} right={item.amount.toString()} />
             })}
             <Totaller amount={totalSum}/>
-            </>
+            </div>
         )   
     }
     return <div>An Unkonwn Error Occured in Collection</div>

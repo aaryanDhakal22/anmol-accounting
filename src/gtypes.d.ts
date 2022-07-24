@@ -39,7 +39,7 @@ export interface Notification{
 export interface Transaction{
     transactionId:string
     date:string
-    type:"SchoolMaintainance" | "Donation" |"Supplies"| "Bills" | "Kitchen"
+    type:"SchoolMaintainance" | "Donation" |"Supplies"| "Bills" | "Kitchen" |"Select"
     subType:string
     payer:string
     note:string

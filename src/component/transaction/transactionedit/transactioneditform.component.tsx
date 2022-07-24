@@ -1,8 +1,10 @@
 import { Transaction } from "../../../gtypes";
-import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import { Button, FormControl, InputLabel, MenuItem, TextField } from "@mui/material";
 import { FormikConfig, useFormik } from "formik";
-import { useAddTransaction, useUpdateTransaction } from "../../../hooks/useTransaction";
+import { deleteTransaction, useAddTransaction, useUpdateTransaction } from "../../../hooks/useTransaction";
 import randomStrGen from "../../../utils/randomAlNumGen";
+import { FormField } from "../../formfield/formfield.component";
+import { useNavigate } from "react-router-dom";
 
 // TODO: Make this global
 
@@ -12,65 +14,73 @@ const typeToSubType :{
     Supplies:string[]
     Bills:string[]
     Kitchen:string[]
+    Select:string[]
 } = {
     Donation:["Invidual","Company"],
     SchoolMaintainance :["Building","Reconstruction","Fixing","Furniture"],
     Supplies:["Stationaries","Toys"],
     Bills:["Electricity","Water","Telephone"],
     Kitchen:["Food","Beverages","Utensils","Pots and Pans"],
+    Select:["Select"]
 }
 const TransactionEditForm = ({transaction} : {transaction:Transaction})=>{
 
-  
+
+        const navigate = useNavigate()
         const {mutate:updateTransaction} = useUpdateTransaction()
     
         const formik= useFormik<Transaction>({
             initialValues: transaction,
             onSubmit:(values:Transaction)=>{
-                console.log(values)
                 updateTransaction(values)
             }
         }as FormikConfig<Transaction>)
 
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <label htmlFor="date">DATE</label>
-            <TextField  variant="outlined" id="date" name= "date" type= "date" onChange={formik.handleChange}value={formik.values.date}/><br></br>
-            <FormControl sx={{ m: 1, minWidth: 120 }} size="medium">
-            <InputLabel id="subTypeLabel">Type</InputLabel>
-            <Select id="type" name="type" defaultValue={"Donation"} value={formik.values.type} label="Paid" onChange={formik.handleChange}>     
-                <MenuItem value={"Donation"}>Donation</MenuItem>
-                <MenuItem value={"SchoolMaintainance"}>School Maintainance</MenuItem>
-                <MenuItem value={"Supplies"}>Supplies</MenuItem>
-                <MenuItem value={"Bills"}>Bills</MenuItem>
-                <MenuItem value={"Kitchen"}>Kitchen</MenuItem>
-            </Select>
-            </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }} size="medium">
-            <InputLabel id="subTypeLabel">Sub-Type</InputLabel>
-            <Select id="subType" label="subTypeLabel" labelId="subTypeLabel" name="subType"  value={formik.values.subType} onChange={formik.handleChange}>     
-                {typeToSubType[formik.values.type?formik.values.type:"Donation"].map((item:string)=>{
-                    return <MenuItem value={item}>{item}</MenuItem>
-                })}
-            </Select>
-            </FormControl>
-            <br/>
-            <label htmlFor="payer">BY</label>
-            <TextField  variant="outlined" id="payer" name= "payer" type= "text" onChange={formik.handleChange}value={formik.values.payer}/><br></br>
-            <label htmlFor="note">NOTES</label>
-            <TextField  variant="outlined" id="note" name= "note" type= "text" onChange={formik.handleChange}value={formik.values.note}/><br></br>
-            <label htmlFor="amount">AMOUNT</label>
-            <TextField  variant="outlined" id="amount" name= "amount" type= "text" onChange={formik.handleChange}value={formik.values.amount}/><br></br>
+        <div className="grid grid-cols-12 mt-16">
+        <div className="col-start-4 col-span-6 mt-6 text-center">
+<form onSubmit={formik.handleSubmit}>
+    <FormField fieldFor={"date"} type={"date"} handleChange = {formik.handleChange} value ={formik.values.date}  />
+    <div className="formField">
+        <label className="labelField" htmlFor="type">TYPE</label>
+        <select className="inputField"  id="type" name="type" value={formik.values.type}  onChange={formik.handleChange}>     
+            <option value={"Donation"}>Donation</option>
+            <option value={"SchoolMaintainance"}>School Maintainance</option>
+            <option value={"Supplies"}>Supplies</option>
+            <option value={"Bills"}>Bills</option>
+            <option value={"Kitchen"}>Kitchen</option>
+        </select>
+    </div>
+    <div className="formField">
+        <label className="labelField" htmlFor="subType">SUB-TYPE</label>
+        <select className="inputField" id="subType" name="subType"  value={formik.values.subType} onChange={formik.handleChange}>     
+        {typeToSubType[formik.values.type?formik.values.type:"Donation"].map((item:string)=>{
+            return <option key={item} value={item}>{item}</option>
+        })}
+    </select> 
+    </div>
+    
+    <FormField fieldFor={"payer"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.payer}  />
+    <div className="formField">
+        <label className="labelField" htmlFor="type">NOTE</label>
+        <textarea className="inputField" name="note" id="note" rows={5} ></textarea>
+    </div>
+    <FormField fieldFor={"amount"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.amount}  />
+    
+    <div className="formField">
+        <label className="labelField" htmlFor="paid">PAID</label>
+        <select className="inputField" name='paid' id="paid"  value={formik.values.paid} onChange={formik.handleChange} >
+            <option value={"Cash"}>Cash</option>
+            <option value={"EPay"}>EPay</option>
+            <option value={"Unpaid"}>Unpaid</option>
+        </select>
+    </div>
 
-            <FormControl sx={{ m: 1, minWidth: 120 }} size="medium">
-            <InputLabel id="subTypeLabel">Mode</InputLabel>
-            <Select id="paid" name="paid" value={formik.values.paid} label="Paid" onChange={formik.handleChange}>     
-                <MenuItem value={"Credit"}>Credit</MenuItem>
-                <MenuItem value={"Debit"}>Debit</MenuItem>
-            </Select>
-            </FormControl>
-            <Button variant="contained" type="submit">Submit</Button>
-        </form>
+    <button className="btn bg-dangerRed border-dangerRed active:text-dangerRed mt-10 ml-5" onClick={()=>deleteTransaction(transaction.transactionId,()=>navigate(-1))}type="button">DELETE</button>
+    <button className="btn mt-10" type="submit">Submit</button>
+</form>
+</div>
+</div>
     )
 }
 export default TransactionEditForm

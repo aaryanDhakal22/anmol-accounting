@@ -20,7 +20,7 @@ const TiledCollection = ({year,month,searchStudentId}:{year:string,month:string,
     return (
         <>
             {notsOfStudent.data.map((notification)=>{
-                return <LinedTile onClick={()=>navigate(`/notification/details/${notification.notificationId}`)}  left={notification.date} center={notification.month} right={notification.amount.toString()} />
+                return <LinedTile key={notification.notificationId}  onClick={()=>navigate(`/notification/details/${notification.notificationId}`)}  left={notification.date} center={notification.month} right={notification.amount.toString()} />
             })}
         </>
     )

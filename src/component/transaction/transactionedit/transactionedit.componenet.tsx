@@ -6,6 +6,7 @@ import { deleteTransaction, useAddTransaction, useTransactionQuery, useUpdateTra
 import randomStrGen from "../../../utils/randomAlNumGen";
 import TransactionEditForm from "./transactioneditform.component";
 
+import {IoArrowBackOutline} from 'react-icons/io5'
 
 const typeToSubType :{
     Donation:string[],
@@ -23,8 +24,9 @@ const typeToSubType :{
 const TransactionEdit= ()=>{
     const transactions = useTransactionQuery()
     const params = useParams()["transactionId"]
-    const transactionId = params?params:''
+
     const navigate = useNavigate()
+    const transactionId = params?params:''
     if (transactions.isLoading  ){
         return <p>Loading...</p>
     }
@@ -40,8 +42,9 @@ const TransactionEdit= ()=>{
         })[0]
         return(
             <>
-            <Button color = "error" onClick={()=>deleteTransaction(transaction.transactionId,()=>navigate(-1))} >(X) Delete</Button>
-            <Button onClick={()=>navigate(-1)} > Back</Button>
+            
+            <button className="btn  ml-16 flex items-center p-3 mt-10 rounded-3xl text-white" onClick={()=>navigate(-1)} ><IoArrowBackOutline style={{"display":"inline","fontSize":"50px"}}/> <span className="text-3xl">BACK</span> </button>
+
             <TransactionEditForm transaction = {transaction} />
             </>
         )
