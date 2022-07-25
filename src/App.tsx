@@ -5,6 +5,7 @@ import CreditPage from "./pages/credit/credit.page";
 import { EmptyPage } from "./pages/empty/empty.page";
 import FeesPage from "./pages/fees/fees.page";
 import NotificationPage from "./pages/notifications/notification.page";
+import { PrintPage } from "./pages/print/print.page";
 import StudentPage from "./pages/student/student.page";
 import TransactionPage from "./pages/transaction/transaction.page";
 
@@ -22,6 +23,7 @@ function App() {
             <Route path='notification/*' element={<NotificationPage/>} ></Route>
             <Route path='transaction/*' element={<TransactionPage/>} ></Route>
             <Route path='credit/*' element={<CreditPage/>} ></Route>
+            <Route path='print/:notificationId' element={<PrintPage/>} ></Route>
 
           </Routes>
       </div>

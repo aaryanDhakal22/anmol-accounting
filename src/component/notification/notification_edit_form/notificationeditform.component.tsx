@@ -64,6 +64,7 @@ const NotificationEditForm = ({notification}:{notification:Notification})=>{
                 </select>
             </div>
             <button className="btn bg-dangerRed border-dangerRed active:text-dangerRed mt-10 ml-5" onClick={()=>deleteNotification(notification.notificationId,()=>navigate(-1))}type="button">DELETE</button>
+            <button className="btn mt-10 ml-5 bg-blue-400 " onClick={()=>navigate(`/print/${notification.notificationId}`)} type="button">PRINT</button>
             <button className="btn mt-10 ml-5" type="submit">SUBMIT</button>
         </form>
         </div>
