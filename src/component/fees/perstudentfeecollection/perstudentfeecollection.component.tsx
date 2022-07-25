@@ -49,7 +49,7 @@ const PerStudentFeeCollection = ()=>{
         return (
             <>
             <div className=" topbar">
-                <button className="btn mr-auto ml-20" onClick={()=>navigate(`/notification/add/${notifications.data[0].studentId}`)} >(+)Add</button>
+                <button className="btn mr-auto ml-20" onClick={()=>navigate(`/notification/add/${searchStudentId}`)} >(+)Add</button>
                 <input  className="topbar-text " placeholder="YEAR" type="number"id="outlined-name"value={year}onChange={handleYearChange}/>
                 <input  className="topbar-text mr-20" placeholder="MONTH"  type="text"id="outlined-name"value={month}onChange={handleMonthChange}/>
             </div>

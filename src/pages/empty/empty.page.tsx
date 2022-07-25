@@ -3,8 +3,12 @@ import React from "react";
 export const EmptyPage = () => {
     return (
         <>
-        <button className="btn" onClick={()=>{}} >Display Alert</button>
-        <SideAlert  message={"Unknown error at Collections"} />
+        {/* <button className="btn" onClick={()=>{}} >Display Alert</button>
+        <SideAlert  message={"Unknown error at Collections"} /> */}
+
+        <div >
+            WELCOME
+        </div>
         </>
     )
     }

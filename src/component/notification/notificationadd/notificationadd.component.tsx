@@ -54,8 +54,9 @@ const NotificationAdd = ()=>{
     const formik= useFormik<Notification>({
         initialValues: notification,
         onSubmit:(values:Notification)=>{
-            console.log(values)
-            addNotification(values)
+            const totalSum = values.speechTherapy + values.therapy + values.transportation + values.snacks + values.tuition + values.extras
+            const finalValues = {...values,amount:totalSum}
+            addNotification(finalValues)
         }
     }as FormikConfig<Notification>)
     

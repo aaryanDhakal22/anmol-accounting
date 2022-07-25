@@ -63,7 +63,7 @@ const TransactionEditForm = ({transaction} : {transaction:Transaction})=>{
     <FormField fieldFor={"payer"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.payer}  />
     <div className="formField">
         <label className="labelField" htmlFor="type">NOTE</label>
-        <textarea className="inputField" name="note" id="note" rows={5} ></textarea>
+        <textarea className="inputField" name="note" id="note" rows={5} value={formik.values.note}></textarea>
     </div>
     <FormField fieldFor={"amount"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.amount}  />
     

@@ -33,7 +33,7 @@ const TransactionCollection = ({type,subType}:TransactionCollectionProps)=>{
         return (
             <div  className="grid grid-cols-2 gap-5 p-10 mt-5">
             {allFiltered.map((item:Transaction)=>{
-                return <LinedTile key={item.transactionId}  onClick={()=>navigate(`/transaction/edit/${item.transactionId}`)} left={item.date} center={item.note} right={item.amount.toString()} />
+                return <LinedTile key={item.transactionId}  onClick={()=>navigate(`/transaction/edit/${item.transactionId}`)} left={item.date} center={item.payer} right={item.amount.toString()} />
             })}
             <Totaller amount={totalSum}/>
             </div>
