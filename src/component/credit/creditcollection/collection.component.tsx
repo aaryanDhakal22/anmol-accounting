@@ -1,4 +1,5 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import { Transaction } from "../../../gtypes";
 import { useTransactionQuery } from "../../../hooks/useTransaction";
 import LinedTile from "../../lined_tile/linedtile.component";

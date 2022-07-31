@@ -1,15 +1,13 @@
-
-
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { Student } from "../../../gtypes";
-import { useFeeStatus } from "../../../hooks/useFeeStatus";
+
+
+
 
 const Tile =({profile}:{profile:Student})=>{
     const {name,group,age,phone,address,studentId} = profile
     const navigate = useNavigate()
-    const location = useLocation()
     
     const handleNavigate = ()=>{
             navigate(`/student/details/${studentId}`)

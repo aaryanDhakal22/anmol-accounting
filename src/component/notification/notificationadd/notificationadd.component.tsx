@@ -1,28 +1,26 @@
-import { Button, MenuItem, Select, TextField } from "@mui/material";
 import { FormikConfig, useFormik } from "formik";
-import React from "react";
 import { useParams } from "react-router-dom";
-import { uuid } from "uuidv4";
+
 import { Notification, Student } from "../../../gtypes";
 import { useAddNotification } from "../../../hooks/useNotification";
 import { useStudentQuery } from "../../../hooks/useStudentQuery";
 import randomStrGen from "../../../utils/randomAlNumGen";
 import { FormField } from "../../formfield/formfield.component";
 
-const initialNotificationValues = {
+// const initialNotificationValues = {
     
-    'date':'',
-    'amount':0,
-    'month':'',
-    'speechTherapy':0,
-    'therapy': 0 ,
-    'transportation':  0,
-    'extras':0,
-    'note' : '',
-    'tuition':0,
-    'snacks':0,
-    'paid':''
-}
+//     'date':'',
+//     'amount':0,
+//     'month':'',
+//     'speechTherapy':0,
+//     'therapy': 0 ,
+//     'transportation':  0,
+//     'extras':0,
+//     'note' : '',
+//     'tuition':0,
+//     'snacks':0,
+//     'paid':''
+// }
 
 const NotificationAdd = ()=>{
     const params = useParams()

@@ -1,7 +1,8 @@
+import { Route, Routes } from "react-router-dom";
 
-import { Route, Routes, useParams } from "react-router-dom";
 import NotificationAdd from "../../component/notification/notificationadd/notificationadd.component";
 import NotificationEdit from "../../component/notification/notificationedit/notificationedit.component";
+
 
 const NotificationPage = ()=>{
     console.log("In noti page")

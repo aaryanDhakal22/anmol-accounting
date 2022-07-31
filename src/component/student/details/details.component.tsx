@@ -1,11 +1,11 @@
+import React from "react";
+import { useParams } from "react-router-dom";
 
-import { Button } from "@mui/material"
-import React from "react"
-import { useParams } from "react-router-dom"
 import { Student } from "../../../gtypes";
 import { useStudentQuery } from "../../../hooks/useStudentQuery";
 import AccountForm from "../account_form/accountform.component";
 import PersonalForm from "../personal_form/personalform.componenet";
+
 
 
 const initialStudentState = {
@@ -41,9 +41,11 @@ const Details = ()=>{
     if(isLoading || isFetching){
         return <div>Loading...</div>
     }
+    if(isError){    
         if(error instanceof Error){
             return <p>Error : {error.message}</p>
         }
+    }
     
     if(isSuccess){
         let foundStudent :Student

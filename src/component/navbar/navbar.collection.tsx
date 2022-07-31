@@ -1,7 +1,8 @@
 import React from "react";
+import { MdAddCircleOutline } from "react-icons/md";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import logo from '../../assets/images/mitosysLogo.png'
-import {MdAddCircleOutline} from 'react-icons/md'
+
+import logo from "../../assets/images/mitosysLogo.png";
 
 export const Navbar = ()=>{
     const navigate = useNavigate()

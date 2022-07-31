@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
+
 import { useNotificationQuery } from "../../../hooks/useNotification";
-import LinedTile from "../../lined_tile/linedtile.component"
+import LinedTile from "../../lined_tile/linedtile.component";
 
 const TiledCollection = ({year,month,searchStudentId}:{year:string,month:string,searchStudentId:string})=>{
     const navigate = useNavigate()

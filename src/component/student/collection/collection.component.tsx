@@ -1,9 +1,9 @@
 import React from "react";
+import { MdAddCircleOutline } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+
 import { useStudentQuery } from "../../../hooks/useStudentQuery";
 import Tile from "../tile/tile.component";
-
-import {MdAddCircleOutline} from 'react-icons/md'
 
 const StudentCollection= ()=>{
     const profiles = useStudentQuery()

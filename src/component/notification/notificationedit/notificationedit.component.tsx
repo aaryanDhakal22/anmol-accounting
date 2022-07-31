@@ -1,15 +1,12 @@
-import { Button, TextField } from "@mui/material"
-import { FormikConfig, useFormik } from "formik"
+import { IoArrowBackOutline } from "react-icons/io5";
 import { useNavigate, useParams } from "react-router-dom";
-import { Student } from "../../../gtypes"
-import { useNotificationQuery, useUpdateNotification } from "../../../hooks/useNotification";
-import { useAddStudentData, useUpdateStudentData } from "../../../hooks/useStudentQuery"
+
+import { useNotificationQuery } from "../../../hooks/useNotification";
 import NotificationEditForm from "../notification_edit_form/notificationeditform.component";
-import {IoArrowBackOutline} from 'react-icons/io5'
+
 const NotificationEdit = ()=>{
     const params = useParams()
     const notificationId = params["notificationId"]
-    const {mutate:addStudent} = useUpdateNotification()
     const notsOfStudent = useNotificationQuery()
 
     const navigate = useNavigate()

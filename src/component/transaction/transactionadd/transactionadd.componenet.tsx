@@ -1,4 +1,5 @@
 import { FormikConfig, useFormik } from "formik";
+
 import { Transaction } from "../../../gtypes";
 import { useAddTransaction } from "../../../hooks/useTransaction";
 import randomStrGen from "../../../utils/randomAlNumGen";
@@ -87,18 +88,6 @@ const TransactionAdd = ()=>{
         </div>
     )
 }
-{/* <Select id="type" name="type" defaultValue={"Donation"} value={formik.values.type} label="Paid" onChange={formik.handleChange}>     
-                <MenuItem value={"Donation"}>Donation</MenuItem>
-                <MenuItem value={"SchoolMaintainance"}>School Maintainance</MenuItem>
-                <MenuItem value={"Supplies"}>Supplies</MenuItem>
-                <MenuItem value={"Bills"}>Bills</MenuItem>
-                <MenuItem value={"Kitchen"}>Kitchen</MenuItem>
-            </Select> */}
-{/* <Select id="subType" label="subTypeLabel" labelId="subTypeLabel" name="subType"  value={formik.values.subType} onChange={formik.handleChange}>     
-                {typeToSubType[formik.values.type?formik.values.type:"Donation"].map((item:string)=>{
-                    return <MenuItem value={item}>{item}</MenuItem>
-                })}
-            </Select> */}
 
 export default TransactionAdd
 

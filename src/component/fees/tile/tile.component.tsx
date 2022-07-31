@@ -1,12 +1,10 @@
-
-
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { Student } from "../../../gtypes";
 import { useFeeStatus } from "../../../hooks/useFeeStatus";
-import { useNotificationQuery } from "../../../hooks/useNotification";
-import { feePaidStatus } from "../../../utils/feePaidStatus";
+
+
 
 const FeeTile =({profile}:{profile:Student})=>{
     const {name,group,age,phone,address,studentId} = profile

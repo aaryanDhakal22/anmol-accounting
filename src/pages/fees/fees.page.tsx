@@ -1,10 +1,9 @@
-import TextField from "@mui/material/TextField";
-import React from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+
 import FeeCollection from "../../component/fees/collection/collection.component";
 import PerStudentFeeCollection from "../../component/fees/perstudentfeecollection/perstudentfeecollection.component";
 
-import Collection from "../../component/student/collection/collection.component";
+
 // import Details from "../../component/details/details.component";
 
 const FeesPage = ()=>{

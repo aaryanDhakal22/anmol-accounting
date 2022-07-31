@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+
 import { getReq } from "../utils/axios-utils";
 
 const fetchFeeStatus = (studentId:string)=>{

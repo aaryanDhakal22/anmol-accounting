@@ -1,6 +1,7 @@
-import { useMutation, useQuery, UseQueryResult, useQueryClient } from "@tanstack/react-query";
-import {Student} from '../gtypes'
-import { getReq,putReq } from "../utils/axios-utils";
+import { useMutation, useQuery, useQueryClient, UseQueryResult } from "@tanstack/react-query";
+
+import { Student } from "../gtypes";
+import { getReq, putReq } from "../utils/axios-utils";
 import { dateFormatter } from "../utils/temp_dateformatter";
 
 

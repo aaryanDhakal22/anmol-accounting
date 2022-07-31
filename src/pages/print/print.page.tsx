@@ -1,8 +1,10 @@
 import NepaliDate from "nepali-date-converter";
 import { useParams } from "react-router-dom";
-import logo from '../../assets/images/schoolLogo.png'
+
+import logo from "../../assets/images/schoolLogo.png";
 import { useNotificationQuery } from "../../hooks/useNotification";
 import { useStudentQuery } from "../../hooks/useStudentQuery";
+
 export const PrintPage = () => {
     const notsOfStudent = useNotificationQuery()
     const params = useParams()
