@@ -13,22 +13,24 @@ function App() {
 
   return (
     <div className="">
-      <Navbar/>
+      <Navbar />
       <div className="ml-[22.9rem] mt-[-1.3rem] bg-softerBackground w-[94.9rem] h-auto">
-          <Routes>
+        <Routes>
 
-            {/* <Route path='/' element={<StudentPage/>} /> */}
-            <Route path='student/*' element={<StudentPage/>} />
-            <Route path='fees/*' element={<FeesPage/>} />
-            <Route path='notification/*' element={<NotificationPage/>} ></Route>
-            <Route path='transaction/*' element={<TransactionPage/>} ></Route>
-            <Route path='credit/*' element={<CreditPage/>} ></Route>
-            <Route path='print/:notificationId' element={<PrintPage/>} ></Route>
 
-          </Routes>
+
+          {/* <Route path='/' element={<StudentPage/>} /> */}
+          <Route path='student/*' element={<StudentPage />} />
+          <Route path='fees/*' element={<FeesPage />} />
+          <Route path='notification/*' element={<NotificationPage />} ></Route>
+          <Route path='transaction/*' element={<TransactionPage />} ></Route>
+          <Route path='credit/*' element={<CreditPage />} ></Route>
+          <Route path='print/:notificationId' element={<PrintPage />} ></Route>
+
+        </Routes>
       </div>
     </div>
-    )
+  )
 }
 
 export default App;
