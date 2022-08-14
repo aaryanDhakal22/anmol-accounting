@@ -28,6 +28,7 @@ export const Navbar = ()=>{
                     <NavLink to="/student" className={({isActive})=>{return isActive?activeClassName:InactiveClassName}}>STUDENT</NavLink>
                     <NavLink to="/fees" className={({isActive})=>{return isActive?activeClassName:InactiveClassName}}>FEES</NavLink>
                     <NavLink to="/credit" className={({isActive})=>{return isActive?activeClassName:InactiveClassName}}>C/D</NavLink>
+                    <NavLink to="/generate/home" className={({isActive})=>{return isActive?activeClassName:InactiveClassName}}>GENERATE</NavLink>
                 </div>
             </div>
         )

@@ -1,0 +1,88 @@
+--- 4 modes for paying ----
+# INCOME (CREDIT)
+Admission Form
+Admission
+Annual Charge ( barsai barsai itirne cost )
+Tuition Fees (all students)
+Snacks (All Students)
+Therapy (All Students)
+Speech Therapy (All Students)
+Transportation (All Students)
+Donation Invidual
+Donation Company
+Donation Government Agency
+DropShip
+Resale 
+Bank Interest 
+
+
+# DEBIT
+Rent
+Salary
+Vehicle (Repair)
+Furniture (Repair)
+Building (Repair)
+Computer (Repair) 
+Computer Support
+Vehicle (Repair)
+Telephone Bills
+Electricity Bills
+Water Bills
+Bank Charge 
+Stationary 
+Printing 
+Kitchen Utensils
+Kitchen Groceries
+Fuel
+Transportation (Renewal)
+Transportation (Insurance)
+Kitchen Gas
+Software
+Transportation (Repair)
+Transportation (Fare)
+Daily Allowance 
+Audit Fee
+Audit Expenses
+Staff Training 
+Interest On Borrowing
+Promotion Expenses
+(ASSET) 
+
+# ASSET
+(stream)--- BANK CODE ACCOUNT NO. --
+RBB010124738 
+RBB839473849
+SBL389282948
+....
+-------------------------
+(product)Cash Balance
+(stream)P.T. Cash
+Account Recievable (System)
+-- FIXED ASSETS --
+Land
+Building
+Furnitues
+Vehicles
+Computer System
+
+# Libaility
+Share Capital Archana
+Share Capital Sangita
+Borrowing Loan Bank
+Borrowing Archana Rimal
+Borrowing Sangeeta Neupane
+Borrowing Others
+Social Security Tax 
+Salary Tax
+Salary Payable
+Audit Fee Payable
+Other Payable
+Capital Reserve/ Deficit (From previous Year profit - lost)
+
+INCOME SHEET = Expenses (debit) , Income (credit), Profit/loss
+BALANCE SHEET = Assets , Liabilities, Capital(p/l) 
+if profit liabilities +- capital reserve
+
+
+
+

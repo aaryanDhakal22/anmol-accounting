@@ -1,3 +1,4 @@
+import TrialBalance from "./pages/trail_balance/trial_balance.page";
 
 export interface Student{
     studentId:string
@@ -47,3 +48,9 @@ export interface Transaction{
     paid:'Unpaid'| 'EPay' | 'Cash'
     
 }
+export interface TrialBalance{
+    admission,salary,student,bill_electricity: number
+}
+
+
+
