@@ -2,35 +2,24 @@ import React, { ChangeEvent } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import TransactionCollection from "../../component/credit/creditcollection/collection.component";
-
-const typeToSubType :{
-    Donation:string[],
-    SchoolMaintainance:string[]
-    Supplies:string[]
-    Bills:string[]
-    Kitchen:string[]
-    Select:string[]
-} = {
-    Donation:["Invidual","Company"],
-    SchoolMaintainance :["Building","Reconstruction","Fixing","Furniture"],
-    Supplies:["Stationaries","Toys"],
-    Bills:["Electricity","Water","Telephone"],
-    Kitchen:["Food","Beverages","Utensils","Pots and Pans"],
-    Select:["Select"]
-}
+import { incomeAndExpense } from "../../headers";
 
 const CreditPage = ()=>{
 
 
-    const [type,setType] = React.useState<"Donation"|"SchoolMaintainance"|"Supplies"|"Bills"|"Kitchen"|"Select">("Select")
-    const [subType,setSubType] = React.useState<string>("")
+    const [type,setType] = React.useState<string>("Select")
+    const [year,setYear] = React.useState<string>("")
+    const [month,setMonth] = React.useState<string>("")
+
+    const handleYearChange = (e:ChangeEvent<HTMLInputElement>)=>{
+        setYear(e.currentTarget.value.trimEnd().trimStart())
+    }
+    const handleMonthChange = (e:ChangeEvent<HTMLInputElement>)=>{
+        setMonth(e.currentTarget.value.trimEnd().trimStart())
+    }
 
     const handleTypeChange = (e:ChangeEvent<HTMLSelectElement>)=>{
-        setType(e.currentTarget.value as "Donation"|"SchoolMaintainance"|"Supplies"|"Bills"|"Kitchen" |"Select" )
-        setSubType("")
-    }
-    const handleSubTypeChange = (e:ChangeEvent<HTMLSelectElement>)=>{
-        setSubType(e.target.value as string)
+        setType(e.currentTarget.value)
     }
 
     return (
@@ -38,22 +27,18 @@ const CreditPage = ()=>{
         <div className="topbar">
 
             <select className="topbar-text" id="type" name="type" value={type} onChange={handleTypeChange}>     
-                <option value={"Select"}>Select</option>
-                <option value={"Donation"}>Donation</option>
-                <option value={"SchoolMaintainance"}>School Maintainance</option>
-                <option value={"Supplies"}>Supplies</option>
-                <option value={"Bills"}>Bills</option>
-                <option value={"Kitchen"}>Kitchen</option>
+            <option value={"Select"}>Select</option>
+                    {incomeAndExpense.map((title)=>{
+                        return <option value={title}>{title}</option>
+                    })}
             </select>
-            <select className="topbar-text" id="subType" name="subType"  value={subType} onChange={handleSubTypeChange}>     
-                <option value={"Select"}>Select</option>
-                {typeToSubType[type].map((item:string)=>{
-                    return <option key={item} value={item}>{item}</option>
-                })}
-            </select>
+
+            <input  className="topbar-text " placeholder="YEAR" type="number"id="outlined-name"value={year}onChange={handleYearChange}/>
+            <input  className="topbar-text mr-20" placeholder="MONTH"  type="text"id="outlined-name"value={month}onChange={handleMonthChange}/>
+            
         </div>
         <Routes>
-            <Route path="" element={<TransactionCollection type={type} subType ={subType} />}></Route>
+            <Route path="" element={<TransactionCollection type={type} year={year} month={month} />}></Route>
         </Routes>
         </>
     )

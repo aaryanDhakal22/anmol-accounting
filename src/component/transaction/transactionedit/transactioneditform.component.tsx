@@ -2,6 +2,7 @@ import { FormikConfig, useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 
 import { Transaction } from "../../../gtypes";
+import { assets, incomeAndExpense, liabilities } from "../../../headers";
 import { deleteTransaction, useUpdateTransaction } from "../../../hooks/useTransaction";
 import { FormField } from "../../formfield/formfield.component";
 
@@ -41,40 +42,46 @@ const TransactionEditForm = ({transaction} : {transaction:Transaction})=>{
 <form onSubmit={formik.handleSubmit}>
     <FormField fieldFor={"date"} type={"date"} handleChange = {formik.handleChange} value ={formik.values.date}  />
     <div className="formField">
-        <label className="labelField" htmlFor="type">TYPE</label>
-        <select className="inputField"  id="type" name="type" value={formik.values.type}  onChange={formik.handleChange}>     
-            <option value={"Donation"}>Donation</option>
-            <option value={"SchoolMaintainance"}>School Maintainance</option>
-            <option value={"Supplies"}>Supplies</option>
-            <option value={"Bills"}>Bills</option>
-            <option value={"Kitchen"}>Kitchen</option>
+                <label className="labelField" htmlFor="type">TYPE</label>
+                <select className="inputField"  id="type" name="type" value={formik.values.type}  onChange={formik.handleChange}>  
+                    <option value={"Select"}>Select</option>
+                    {incomeAndExpense.map((title)=>{
+                        return <option value={title}>{title}</option>
+                    })}
+                </select>
+            </div>
+    <div className="formField">
+        <label className="labelField" htmlFor="paidFrom">PAID FROM</label>
+        <select className="inputField"  id="paidFrom" name="paidFrom" value={formik.values.paidFrom}  onChange={formik.handleChange}>  
+        <option value={"Select"}>Select</option>
+
+        <option value={"Outside"}>Outside</option>
+            {assets.map((title)=>{
+                return <option value={title}>{title}</option>
+            })}
         </select>
     </div>
     <div className="formField">
-        <label className="labelField" htmlFor="subType">SUB-TYPE</label>
-        <select className="inputField" id="subType" name="subType"  value={formik.values.subType} onChange={formik.handleChange}>     
-        {typeToSubType[formik.values.type?formik.values.type:"Donation"].map((item:string)=>{
-            return <option key={item} value={item}>{item}</option>
-        })}
-    </select> 
+        <label className="labelField" htmlFor="paidTo">PAID TO</label>
+        <select className="inputField"  id="paidTo" name="paidTo" value={formik.values.paidTo}  onChange={formik.handleChange}>  
+        <option value={"Select"}>Select</option>
+        <option value={"Outside"}>Outside</option>
+
+            {liabilities.map((title)=>{
+                return <option value={title}>{title}</option>
+            })}
+            {assets.map((title)=>{
+                return <option value={title}>{title}</option>
+            })}
+        </select>
     </div>
     
     <FormField fieldFor={"payer"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.payer}  />
     <div className="formField">
         <label className="labelField" htmlFor="type">NOTE</label>
-        <textarea className="inputField" name="note" id="note" rows={5} value={formik.values.note}></textarea>
+        <textarea className="inputField" name="note" id="note" onChange = {formik.handleChange} rows={5} value={formik.values.note}></textarea>
     </div>
     <FormField fieldFor={"amount"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.amount}  />
-    
-    <div className="formField">
-        <label className="labelField" htmlFor="paid">PAID</label>
-        <select className="inputField" name='paid' id="paid"  value={formik.values.paid} onChange={formik.handleChange} >
-            <option value={"Cash"}>Cash</option>
-            <option value={"EPay"}>EPay</option>
-            <option value={"Unpaid"}>Unpaid</option>
-        </select>
-    </div>
-
     <button className="btn bg-dangerRed border-dangerRed active:text-dangerRed mt-10 ml-5" onClick={()=>deleteTransaction(transaction.transactionId,()=>navigate(-1))}type="button">DELETE</button>
     <button className="btn mt-10" type="submit">Submit</button>
 </form>

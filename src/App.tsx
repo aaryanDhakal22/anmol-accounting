@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import { Navbar } from "./component/navbar/navbar.collection";
+import AOLPage from "./pages/aol/aol.page";
 import CreditPage from "./pages/credit/credit.page";
 import FeesPage from "./pages/fees/fees.page";
 import { GeneratePage } from "./pages/generate/generate.page";
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className="">
       <Navbar />
-      <div className="ml-[22.9rem] mt-[-1.3rem] bg-softerBackground w-[94.9rem] h-auto">
+      <div className="ml-[13.2rem] mt-[-1.3rem] bg-softerBackground w-[94.9rem] h-auto">
         <Routes>
           {/* <Route path='/' element={<StudentPage/>} /> */}
           <Route path='student/*' element={<StudentPage />} />
@@ -22,6 +23,7 @@ function App() {
           <Route path='notification/*' element={<NotificationPage />} ></Route>
           <Route path='transaction/*' element={<TransactionPage />} ></Route>
           <Route path='credit/*' element={<CreditPage />} ></Route>
+          <Route path='aol/*' element={<AOLPage />} ></Route>
           <Route path='generate/*' element={<GeneratePage />} ></Route>
           <Route path='print/:notificationId' element={<PrintPage />} ></Route>
 

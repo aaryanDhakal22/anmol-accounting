@@ -40,17 +40,38 @@ export interface Notification{
 export interface Transaction{
     transactionId:string
     date:string
-    type:"SchoolMaintainance" | "Donation" |"Supplies"| "Bills" | "Kitchen" |"Select"
-    subType:string
+    type:string
+    paidTo:string
+    paidFrom:string
     payer:string
     note:string
     amount:number
-    paid:'Unpaid'| 'EPay' | 'Cash'
+    mode: string
     
+}
+
+export interface Liabilities{
+    shareCapitalArchana :number
+    shareCapitalSangita :number
+    borrowingLoanBank :number
+    borrowingArchanaRimal :number
+    borrowingSangeetaNeupane :number
+    borrowingOthers :number
+    socialSecurityTax :number
+    salaryTax :number
+    salaryPayable :number
+    auditFeePayable :number
+    otherPayable :number
+    capitalReserveOrDeficit :number
+}
+
+export interface Assets{
+    cashBalance :number
+    ptCash :number
+    accountReceivable :number
+
 }
 export interface TrialBalance{
     admission,salary,student,bill_electricity: number
 }
-
-
 

@@ -41,13 +41,13 @@ const NotificationEditForm = ({notification}:{notification:Notification})=>{
                     <option value={"Chaitra"}>Chaitra</option>
                 </select>
             </div>
-            <FormField fieldFor={"speechTherapy"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.speechTherapy}  />
-            <FormField fieldFor={"therapy"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.therapy}  />
-            <FormField fieldFor={"transportation"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.transportation}  />
-            <FormField fieldFor={"snacks"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.snacks}  />
-            <FormField fieldFor={"extras"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.extras}  />
+            <FormField fieldFor={"speechTherapy"} type={"number"} handleChange = {formik.handleChange} value ={formik.values.speechTherapy}  />
+            <FormField fieldFor={"therapy"} type={"number"} handleChange = {formik.handleChange} value ={formik.values.therapy}  />
+            <FormField fieldFor={"transportation"} type={"number"} handleChange = {formik.handleChange} value ={formik.values.transportation}  />
+            <FormField fieldFor={"snacks"} type={"number"} handleChange = {formik.handleChange} value ={formik.values.snacks}  />
+            <FormField fieldFor={"extras"} type={"number"} handleChange = {formik.handleChange} value ={formik.values.extras}  />
             <FormField fieldFor={"note"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.note}  />
-            <FormField fieldFor={"tuition"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.tuition}  />
+            <FormField fieldFor={"tuition"} type={"number"} handleChange = {formik.handleChange} value ={formik.values.tuition}  />
 
 
             {/* <label htmlFor="paid">PAID</label>
