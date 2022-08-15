@@ -59,6 +59,11 @@ const TransactionEditForm = ({transaction} : {transaction:Transaction})=>{
             {assets.map((title)=>{
                 return <option value={title}>{title}</option>
             })}
+            <option value={"Borrowing Loan Bank"}>Borrowing Loan Bank</option>
+                <option value={"Borrowing Archana Rimal"}>Borrowing Archana Rimal</option>
+                <option value={"Borrowing Sangeeta Neupane"}>Borrowing Sangeeta Neupane</option>
+                <option value={"Borrowing Others"}>Borrowing Others</option>
+                
         </select>
     </div>
     <div className="formField">
@@ -82,6 +87,23 @@ const TransactionEditForm = ({transaction} : {transaction:Transaction})=>{
         <textarea className="inputField" name="note" id="note" onChange = {formik.handleChange} rows={5} value={formik.values.note}></textarea>
     </div>
     <FormField fieldFor={"amount"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.amount}  />
+    <div className="formField">
+                <label className="labelField" htmlFor="mode">MODE</label>
+                <select className="inputField"  id="mode" name="mode" value={formik.values.mode}  onChange={formik.handleChange}>  
+                <option value={"Select"}>Select</option>
+                <option value={"Income"}>Income</option>
+                <option value={"Expense"}>Expense</option>
+                <option value={"Account Receivable(DO)"}>Account Receivable [DO] </option>
+                <option value={"Account Receivable(DONE)"}>Account Receivable [DONE] </option>
+                <option value={"Salary Payable(DO)"}>Salary Payable [DO] </option>
+                <option value={"Salary Payable(DONE)"}>Salary Payable [DONE] </option>
+                <option value={"Audit Fee Payable(DO)"}>Audit Fee Payable [DO] </option>
+                <option value={"Audit Fee Payable(DONE)"}>Audit Fee Payable [DONE] </option>
+                <option value={"Other Payable(DO)"}>Other Payable [DO] </option>
+                <option value={"Other Payable(DONE)"}>Other Payable [DONE] </option>
+                   
+                </select>
+            </div>
     <button className="btn bg-dangerRed border-dangerRed active:text-dangerRed mt-10 ml-5" onClick={()=>deleteTransaction(transaction.transactionId,()=>navigate(-1))}type="button">DELETE</button>
     <button className="btn mt-10" type="submit">Submit</button>
 </form>

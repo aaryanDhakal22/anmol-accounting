@@ -71,7 +71,9 @@ export interface Assets{
     accountReceivable :number
 
 }
-export interface TrialBalance{
-    admission,salary,student,bill_electricity: number
+export interface Account{
+    accountId:string
+    currBalance:number
+    currLoan:number
+    bankName:string
 }
-

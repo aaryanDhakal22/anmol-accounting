@@ -53,6 +53,10 @@ const TransactionAdd = ()=>{
                     {assets.map((title)=>{
                         return <option value={title}>{title}</option>
                     })}
+                    {liabilities.map((title)=>{
+                        return <option value={title}>{title}</option>
+                    })}
+                
                 </select>
             </div>
             <div className="formField">
@@ -76,8 +80,23 @@ const TransactionAdd = ()=>{
                 <textarea className="inputField" name="note" id="note" onChange={formik.handleChange} value={formik.values.note}  rows={5} ></textarea>
             </div>
             <FormField fieldFor={"amount"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.amount}  />
-            
-            <FormField fieldFor={"mode"} type={"text"} handleChange = {formik.handleChange} value ={formik.values.mode}  />
+            <div className="formField">
+                <label className="labelField" htmlFor="mode">MODE</label>
+                <select className="inputField"  id="mode" name="mode" value={formik.values.mode}  onChange={formik.handleChange}>  
+                <option value={"Select"}>Select</option>
+                <option value={"Income"}>Income</option>
+                <option value={"Expense"}>Expense</option>
+                <option value={"Account Receivable(DO)"}>Account Receivable [DO] </option>
+                <option value={"Account Receivable(DONE)"}>Account Receivable [DONE] </option>
+                <option value={"Salary Payable(DO)"}>Salary Payable [DO] </option>
+                <option value={"Salary Payable(DONE)"}>Salary Payable [DONE] </option>
+                <option value={"Audit Fee Payable(DO)"}>Audit Fee Payable [DO] </option>
+                <option value={"Audit Fee Payable(DONE)"}>Audit Fee Payable [DONE] </option>
+                <option value={"Other Payable(DO)"}>Other Payable [DO] </option>
+                <option value={"Other Payable(DONE)"}>Other Payable [DONE] </option>
+                   
+                </select>
+            </div>
             
             <button className="btn mt-10" type="submit">Submit</button>
 

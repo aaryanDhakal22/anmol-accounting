@@ -28,6 +28,8 @@ export const incomeAndExpense = [
     "Rent",
     "Resale",
     "Salary",
+    "Salary Tax",
+    "Social Security Tax",
     "Software",
     "Staff Training",
     "Stationary",
@@ -37,29 +39,33 @@ export const incomeAndExpense = [
     "Transportation (Renewal)",
     "Transportation (Repair)",
     "Vehicle (Repair)",
-    "Water Bills"
+    "Water Bills",
+    "Land (Purchase)",
+    "Building (Purchase)",
+    "Furnitues (Purchase)",
+    "Vehicles (Purchase)",
+    "Computer System (Purchase)"
 ]
 export const assets=[
     "RBB Acc No. 1001244226453",
     "NBL Acc No. 1001244343453",
     "SBL Acc No. 1001244228453",
     "Cash Balance",
-    "P.T. Cash",
-    "Account Recievable"
+    "P.T. Cash"
 ]
 export const liabilities = [
-    "Share Capital Archana",
-    "Share Capital Sangita",
-    "Borrowing Loan Bank",
+    // "Share Capital Archana",
+    // "Share Capital Sangita",
+    "Borrowing RBB Acc. 1001244226453",
+    "Borrowing NBL Acc. 1001244343453",
+    "Borrowing SBL Acc. 1001244228453",
     "Borrowing Archana Rimal",
     "Borrowing Sangeeta Neupane",
     "Borrowing Others",
-    "Social Security Tax",
-    "Salary Tax",
-    "Salary Payable",
-    "Audit Fee Payable",
-    "Other Payable",
-    "Capital Reserve/ Deficit"
+    // "Salary Payable",
+    // "Audit Fee Payable",
+    // "Other Payable",
+    // "Capital Reserve/ Deficit"
 ]
 export const headerCodes = {
     "0001":"Admission",

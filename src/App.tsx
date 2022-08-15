@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import { Navbar } from "./component/navbar/navbar.collection";
+import AccountsPage from "./pages/accounts/accounts.page";
 import AOLPage from "./pages/aol/aol.page";
 import CreditPage from "./pages/credit/credit.page";
 import FeesPage from "./pages/fees/fees.page";
@@ -24,6 +25,7 @@ function App() {
           <Route path='transaction/*' element={<TransactionPage />} ></Route>
           <Route path='credit/*' element={<CreditPage />} ></Route>
           <Route path='aol/*' element={<AOLPage />} ></Route>
+          <Route path='account/*' element={<AccountsPage/>} ></Route>
           <Route path='generate/*' element={<GeneratePage />} ></Route>
           <Route path='print/:notificationId' element={<PrintPage />} ></Route>
 

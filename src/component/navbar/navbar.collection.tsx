@@ -26,6 +26,7 @@ export const Navbar = ()=>{
                 <div onClick={transactionNavigate} className="text-secondaryText px-3 py-2 rounded-lg w-48 text-center mt-14 border-secondaryText border-2  text-xl"> <MdAddCircleOutline style={{"display":"inline","fontSize":"25px"}} /> TRANSACTION</div>
                 <div className="flex flex-col items-center text-primaryText text-2xl gap-5 mt-8">
                     <NavLink to="/student" className={({isActive})=>{return isActive?activeClassName:InactiveClassName}}>STUDENT</NavLink>
+                    <NavLink to="/account" className={({isActive})=>{return isActive?activeClassName:InactiveClassName}}>ACCOUNT</NavLink>
                     <NavLink to="/fees" className={({isActive})=>{return isActive?activeClassName:InactiveClassName}}>FEES</NavLink>
                     <NavLink to="/credit" className={({isActive})=>{return isActive?activeClassName:InactiveClassName}}>C/D</NavLink>
                     <NavLink to="/aol" className={({isActive})=>{return isActive?activeClassName:InactiveClassName}}>A/L</NavLink>
