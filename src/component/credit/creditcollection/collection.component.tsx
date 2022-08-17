@@ -24,7 +24,11 @@ const TransactionCollection = ({type,year,month}:TransactionCollectionProps)=>{
             return <div>Error Occured: {transactions.error.message}</div>
         }
     }
+    
     if(transactions.isSuccess){
+        if(transactions.data.length === 0){
+            return <div className="text-white text-center mt-96 text-3xl" >EMPTY</div>
+        }
         console.log(transactions.data[0].date.substring(0,4))
         console.log(year)
         const allFiltered = transactions.data.filter((item)=>{

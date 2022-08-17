@@ -93,14 +93,14 @@ const TransactionEditForm = ({transaction} : {transaction:Transaction})=>{
                 <option value={"Select"}>Select</option>
                 <option value={"Income"}>Income</option>
                 <option value={"Expense"}>Expense</option>
-                <option value={"Account Receivable(DO)"}>Account Receivable [DO] </option>
-                <option value={"Account Receivable(DONE)"}>Account Receivable [DONE] </option>
-                <option value={"Salary Payable(DO)"}>Salary Payable [DO] </option>
-                <option value={"Salary Payable(DONE)"}>Salary Payable [DONE] </option>
-                <option value={"Audit Fee Payable(DO)"}>Audit Fee Payable [DO] </option>
-                <option value={"Audit Fee Payable(DONE)"}>Audit Fee Payable [DONE] </option>
-                <option value={"Other Payable(DO)"}>Other Payable [DO] </option>
-                <option value={"Other Payable(DONE)"}>Other Payable [DONE] </option>
+                <option value={"Account Receivable[DO]"}>Account Receivable [DO] </option>
+                <option value={"Account Receivable[DONE]"}>Account Receivable [DONE] </option>
+                <option value={"Salary Payable[DO]"}>Salary Payable [DO] </option>
+                <option value={"Salary Payable[DONE]"}>Salary Payable [DONE] </option>
+                <option value={"Audit Fee Payable[DO]"}>Audit Fee Payable [DO] </option>
+                <option value={"Audit Fee Payable[DONE]"}>Audit Fee Payable [DONE] </option>
+                <option value={"Other Payable[DO]"}>Other Payable [DO] </option>
+                <option value={"Other Payable[DONE]"}>Other Payable [DONE] </option>
                    
                 </select>
             </div>

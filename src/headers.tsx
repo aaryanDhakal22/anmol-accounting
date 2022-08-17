@@ -56,7 +56,7 @@ export const assets=[
 export const liabilities = [
     // "Share Capital Archana",
     // "Share Capital Sangita",
-    "Borrowing RBB Acc. 1001244226453",
+    "Borrowing WU Acc. 84938920383",
     "Borrowing NBL Acc. 1001244343453",
     "Borrowing SBL Acc. 1001244228453",
     "Borrowing Archana Rimal",
