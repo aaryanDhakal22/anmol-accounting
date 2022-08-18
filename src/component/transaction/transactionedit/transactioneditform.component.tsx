@@ -40,7 +40,13 @@ const TransactionEditForm = ({transaction} : {transaction:Transaction})=>{
         <div className="grid grid-cols-12 mt-16">
         <div className="col-start-4 col-span-6 mt-6 text-center">
 <form onSubmit={formik.handleSubmit}>
-    <FormField fieldFor={"date"} type={"date"} handleChange = {formik.handleChange} value ={formik.values.date}  />
+            <div className="formField">
+                <label className="labelField" htmlFor="date">DATE</label>
+                <input className="inputField" id="date" name="date" type="text" placeholder = {"YYYY-MM-DD"} onChange={formik.handleChange} value={formik.values.date}/>
+            </div>
+            {formik.touched.date && formik.errors.date ? (
+                <div className="text-dangerRed">{formik.errors.date}</div>
+            ) : null}
     <div className="formField">
                 <label className="labelField" htmlFor="type">TYPE</label>
                 <select className="inputField"  id="type" name="type" value={formik.values.type}  onChange={formik.handleChange}>  

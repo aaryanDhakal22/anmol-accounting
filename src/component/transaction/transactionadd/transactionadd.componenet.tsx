@@ -5,6 +5,7 @@ import { useAddTransaction } from "../../../hooks/useTransaction";
 import randomStrGen from "../../../utils/randomAlNumGen";
 import { FormField } from "../../formfield/formfield.component";
 import { assets, incomeAndExpense, liabilities } from "../../../headers";
+import * as Yup from 'yup'
 const initialValues:Transaction = {
     "transactionId":'',
     "date":'',
@@ -25,6 +26,12 @@ const TransactionAdd = ()=>{
     const transaction = {...initialValues, "transactionId":newTransactionId}
     const formik= useFormik<Transaction>({
         initialValues: transaction,
+        validationSchema: Yup.object({
+            date: Yup.string()
+            .max(10,"Date must be less than 10 characters")
+            .required('Required')
+            .matches(/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/,"Must Match YYYY-MM-DD")
+        }),
         onSubmit:(values:Transaction)=>{
             console.log(values)
             addTransaction(values)
@@ -34,7 +41,14 @@ const TransactionAdd = ()=>{
         <div className="grid grid-cols-12 mt-36">
                 <div className="col-start-4 col-span-6 mt-6 text-center">
         <form onSubmit={formik.handleSubmit}>
-            <FormField fieldFor={"date"} type={"date"} handleChange = {formik.handleChange} value ={formik.values.date}  />
+            <div className="formField">
+                <label className="labelField" htmlFor="date">DATE</label>
+                <input className="inputField" id="date" name="date" type="text" onBlur={formik.handleBlur} placeholder = {"YYYY-MM-DD"} onChange={formik.handleChange} value={formik.values.date}/>
+                
+            </div>
+            {formik.touched.date && formik.errors.date ? (
+                <div className="text-dangerRed">{formik.errors.date}</div>
+            ) : null}
             <div className="formField">
                 <label className="labelField" htmlFor="type">TYPE</label>
                 <select className="inputField"  id="type" name="type" value={formik.values.type}  onChange={formik.handleChange}>  
